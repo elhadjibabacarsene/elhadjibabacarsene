@@ -125,7 +125,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){//LA REQUETE POST EST ENVOYEE AU SERVEUR
                         echo '<br><br><input type="submit" value="Résultat" class="resultat" name="resultat">';
 
                             if($isResult){
-                                echo '<br><br>Vous avez saisi '.$nbreChamps.' mot(s). Dont '.$nbreDeMotsM.' avec la lettre M';
+                                echo '<br><br><span class="resultat-text">Vous avez saisi '.$nbreChamps.' mot(s), dont <span style="color:green">'.$nbreDeMotsM.' avec la lettre M</span></span>';
                             }
                     }
 

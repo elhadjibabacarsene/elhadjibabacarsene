@@ -67,7 +67,7 @@ form{
 .resultat{
     width: 200px;
     height: 35px;
-    margin: 12px 0px 10px 100px;
+    margin: 12px 0px 20px 100px;
     background-color: green;
     border-radius: 4px;
     color: white;
@@ -92,4 +92,7 @@ form{
 .data{
         border: 1px solid black;
 }
-
+.resultat-text{
+    margin-left: 45px;
+    font-weight: bold;
+}

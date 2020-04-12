@@ -32,11 +32,9 @@ body{
     padding-left: 20px;
     float: left;
 }
-.titre{
-    padding-top: 12px;
-    padding-left: 475px;
-    float: left;
-    font-family: Helvetica, sans-serif;
+.titre {
+    width: 50%;
+    font-size: 12px;
 }
 .titre h2{
     color: white;
@@ -52,7 +50,7 @@ body{
     right: 28%;
     margin: 90px auto;
     width: 500px;
-    height: 330px;
+    height: 350px;
     background-color: #f2f2f2;
     border-radius: 3px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
@@ -96,11 +94,7 @@ body{
 
 }
 
-#password{
-    margin-top:30px;
-}
 .form-login-form input[type="submit"]{
-    margin-top: 30px;
     width: 120px;
     height: 45px;
     background-color: #52bfd1;
@@ -128,11 +122,23 @@ body{
 
 .form-login-form .icone-password{
     position: absolute;
-    margin: 40px 0px 0px 380px;
+    margin: 15px 0px 0px 380px;
     width: 20px;
     height: 20px;
 }
 .comment{
     font-size: 12px;
     color: red;
+}
+
+/** HEADER CONTAINER **/
+.head-center{
+    margin-left: 50px;
+}
+.head-center h3{
+    font-size: 16px;
+}
+.head-left img{
+    width: 50px;
+    height: 50px;
 }

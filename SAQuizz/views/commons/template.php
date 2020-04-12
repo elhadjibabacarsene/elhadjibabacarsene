@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- INCLUSION DU CSS -->
     <link rel="stylesheet" href="<?= URL ?>/public/style/main.css<?php echo "?".rand();?>">
-    <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="<?= URL ?>/public/style/tablette.css<?php echo "?".rand();?>">
-    <link rel="stylesheet" media="screen and (max-width:767px)" href="<?= URL ?>/public/style/mobile.css<?php echo "?".rand();?>"@>
+    <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="<?=URL?>/public/style/tablette.css<?php echo "?".rand();?>">
+    <link rel="stylesheet" media="screen and (max-width:767px)" href="<?=URL?>/public/style/mobile.css<?php echo "?".rand();?>">
     <!-- INCLUSION DES FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?=$title?></title>
@@ -26,7 +26,7 @@
 
 
         <!-- DEBUT CONTENU -->
-                <div class="container">
+                <div id="container">
 
                         <?=$content;?>
 

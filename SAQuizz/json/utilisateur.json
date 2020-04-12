@@ -1,0 +1,18 @@
+{
+  "user1": {
+    "login" : "admin",
+    "password" : "admin",
+    "acces" : "admin",
+    "prenom" : "Babacar",
+    "nom" : "Séne",
+    "avatar" : "public/source/images/avatar/ebs.jpg"
+  },
+  "user2": {
+    "login" : "joueur",
+    "password" : "joueur",
+    "acces" : "joueur",
+    "prenom" : "Séne",
+    "nom" : "Babacar",
+    "avatar" : "public/source/images/avatar/ebs.jpg"
+  }
+}

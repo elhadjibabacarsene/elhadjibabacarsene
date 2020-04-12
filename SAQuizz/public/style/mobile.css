@@ -33,21 +33,13 @@ body{
     padding-left: 20px;
     float: left;
 }
-.titre{
-    padding-top: 20px;
-    padding-left: 100px;
-    float: left;
+.titre {
+    width: 50%;
     font-size: 12px;
-    font-family: Helvetica, sans-serif;
-    position: absolute;
-    top:0;
-    right: 12px;
 }
 .titre h2{
     color: white;
 }
-
-
 
 /** BLOCK FORM LOGIN **/
 .form-login{
@@ -57,7 +49,7 @@ body{
     right: 10%;
     margin: 90px auto;
     width: 300px;
-    height: 330px;
+    height: 400px;
     background-color: #f2f2f2;
     border-radius: 3px;
     box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
@@ -113,15 +105,11 @@ body{
     height: 40px;
     display: block;
 }
-#password{
 
-    margin-top:30px;
-
-}
 .form-login-form input[type=submit]{
-    margin:20px 0px 7px 25px;
+    margin:0px 0px 7px 25px;
     width: 227px;
-    height: 45px;
+    height: 30px;
     background-color: #52bfd1;
     color: white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
@@ -148,7 +136,7 @@ body{
 
 .form-login-form .icone-password{
     position: absolute;
-    margin: 40px 0px 0px 380px;
+    margin: 15px 0px 0px 380px;
     width: 20px;
     height: 20px;
     right: 20px;
@@ -156,4 +144,40 @@ body{
 .comment{
     font-size: 12px;
     color: red;
+}
+/** HEADER CONTAINER **/
+.head-center{
+    margin-left: 10px;
+}
+.head-center h3{
+    font-size: 10px;
+}
+.head-center h3 span{
+    font-size: 8px;
+}
+.head-right{
+    margin-right: 20px;
+}
+.head-right form input[type="submit"]{
+    width: 80px;
+    font-size: 12px;
+    margin-left: 5px;
+    height: 30px;
+    color: white;
+    background-color: #49d1cb;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    border:none;
+    box-shadow:  0 2px 3px 0 rgba(0,0,0,0.24);
+    cursor: pointer;
+}
+.head-left img{
+    width: 40px;
+    height: 40px;
+    border:solid 1px white;
+    border-radius: 50%;
+    margin-left: 8px;
+    margin-bottom: 5px;
+}
+.head-left p{
+    padding-left: 0px;
 }

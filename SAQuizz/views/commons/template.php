@@ -36,6 +36,9 @@
 
 
     <!-- INCLUSION DES FICHIERS JS -->
-    <script text="type/javascript" src="<?URL?>public/js/config.js"></script>
+    <script text="type/javascript" src="<?URL?>public/js/config.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?=URL?>public/js/validationForm.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/accueilAdmin.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?=URL?>public/js/interactiveMenuAdmin.js<?php echo "?".rand();?>"></script>
 </body>
 </html>

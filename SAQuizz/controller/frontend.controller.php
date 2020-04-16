@@ -20,13 +20,12 @@ function getPageConnexion(){
         /*** DEBUT VALIDATION ***/
         $isSuccess = false;
         $loginError = $passwordError = "<br>";
-        if($_SERVER['REQUEST_METHOD'] === "POST"){
+        if($_SERVER['REQUEST_METHOD'] === "POST") {
 
             $login = $_POST['login'];
             $password = $_POST['password'];
             $isSuccess = true;
 
-            //On vérifie si le user a donné son login
             if($login === ""){
                 $loginError = "Ce champs est obligatoire pour l'authentification";
                 $isSuccess = false;
@@ -37,8 +36,7 @@ function getPageConnexion(){
                 $isSuccess = false;
             }
         }
-        /*** FIN VALIDATION ***/
-
+        }
         if($isSuccess){
 
                 //Decode du fichier JSON d'utilisateur
@@ -90,10 +88,8 @@ function getPageConnexion(){
                     }
                 }
             }
-
-    }
     require_once 'views/front/login.view.php';
-}
+    }
 
 
 /**

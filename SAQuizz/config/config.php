@@ -3,17 +3,17 @@
 /**
  * FONCTION QUI PERMET DE TRANSFORMER UN FILES JSON EN TABLEAU PHP
  * @param $nameFileJson string nom du fichier JSON
- * @return mixed le fichier json decoder
+ * @return mixed le fichier data decoder
  */
     function transformFileJson($nameFileJson){
-        $file_json = file_get_contents(URL."json/".$nameFileJson);
+        $file_json = file_get_contents(URL."data/".$nameFileJson);
         return json_decode($file_json);
     }
 
 
 /**
  * FONCTION QUI NOUS PERMET DE CONNAITRE LE NOMBRE D'ELEMENT DANS LE FICHIER JSON
- * @param $jsonFileDecode array fichier json decoder
+ * @param $jsonFileDecode array fichier data decoder
  * @return int le nombre d'élément dans le fichier JSON
  */
     function countJson($jsonFileDecode){

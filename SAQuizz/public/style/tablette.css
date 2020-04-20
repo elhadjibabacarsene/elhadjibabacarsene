@@ -142,3 +142,33 @@ body{
     width: 50px;
     height: 50px;
 }
+
+#form-create-user input[type="text"],input[type="password"]{
+    display: block;
+    width: 300px;
+    height: 30px;
+    font-size: 14px;
+    color: #575156;
+    font-weight: bold;
+}
+.avatar-create-user-img {
+    border: 3px solid #52bfd1;
+    position: absolute;
+    top: 401px;
+    left: -187px;
+    width: 24%;
+    height: 26%;
+    border-radius: 50%;
+}
+.lbl-avatar-admin {
+    position: absolute;
+    top: 574px;
+    left: -163px;
+    font-size: 12px;
+    color: black;
+}
+
+#list-joueurs td
+{
+    padding-right: 80px;
+}

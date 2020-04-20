@@ -4,8 +4,6 @@ ob_start();
 
 ?>
 
-
-
     <div id="container-accueil">
         <!-- EN TETE -->
         <div class="container-accueil-head">
@@ -28,35 +26,36 @@ ob_start();
             <div class="container-accueil-corps-menu">
                 <div class="top">
                     <img src="<?=URL.$_SESSION['avatar']?>" alt="<?=$_SESSION['avatar']?>">
-                    <p><?=$_SESSION['prenom']?></p>
-                    <p class="nom"><?=$_SESSION['nom']?></p>
+                    <p><?=ucfirst($_SESSION['prenom'])?></p>
+                    <p class="nom"><?=strtoupper($_SESSION['nom'])?></p>
                 </div>
                 <div class="bottom">
-                    <ul id="menu-admin">
-                        <div id="ic-1" categorie="list">
-                            <div class="ic-color"></div>
-                            <li class="active"><a class="activated" href="#">Liste Questions</a></li>
-                            <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-liste.png">
-                        </div>
-                        <div id="ic-2" categorie="create">
-                            <div class="ic-color"></div>
-                            <li><a href="#">Créer utilisateur</a></li>
-                            <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-ajout.png">
-                        </div>
-                        <div id="ic-3" categorie="list">
-                            <div class="ic-color"></div>
-                            <li><a href="#">Liste joueur</a></li>
-                            <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-liste.png">
-                        </div>
-                        <div id="ic-4" categorie="create">
-                            <div class="ic-color"></div>
-                            <li><a href="#">Créer question</a></li>
-                            <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-ajout.png">
-                        </div>
-                    </ul>
+                    <!-- MENU -->
+                    <?php
+                        include "views/commons/menu.php";
+                    ?>
                 </div>
             </div>
             <div id="container-accueil-corps">
+
+                <!-- ACCUEIL NOMBRE QUESTIONS -->
+                <div class="accueil-nbre-question">
+                    <form method="POST">
+                        <label>Nbre de questions/jeux</label>
+                        <input type="text" name="nbre-question">
+                        <input type="submit" name="submit-nbre-question" value="OK">
+                    </form>
+                </div>
+
+                <!-- ACCUEIL-LIST-QUESTION-->
+                <div class="accueil-list-question"></div>
+
+                    <!-- ACCUEIL-NEXT-QUESTION-->
+                <div class="accueil-question-next">
+                    <form method="POST">
+                        <input type="submit" name="submit-question-next" value="Suivant">
+                    </form>
+                </div>
 
             </div>
         </div>

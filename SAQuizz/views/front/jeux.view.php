@@ -21,6 +21,28 @@ ob_start();
             </div>
         </div>
 
+        <div id="container-accueil-jeux">
+
+            <div id="container-accueil-question">
+                <form method="POST">
+                    <input type="submit" name="next-question" value="Suivant" id="next-question">
+                    <input type="submit" name="before-question" value="Précédent" id="before-question">
+                </form>
+            </div>
+
+
+            <div id="container-accueil-score">
+                <div id="nav-score">
+                    <a href="#" id="menu-top-score">Top scores</a>
+                    <a href="#"  id="menu-best-score">Mon meilleur score</a>
+                </div>
+                <div id="div-score">
+                    <p id="comment"></p>
+                </div>
+
+            </div>
+        </div>
+
     </div>
 
 

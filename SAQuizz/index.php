@@ -14,7 +14,15 @@ if(isset($_GET['page']) && !empty($_GET['page'])){
         case "accueil" : getPageAccueil();
         break;
         case "jeux": getPageJeux();
+        break;
+        case  "create-user": getPageCreateUser();
+        break;
+        case "inscription" : getPageInscription();
+        break;
+        case "liste-joueurs" : getPageListeJoueurs();
+        break;
     }
+
 
 }else{
     getPageConnexion();

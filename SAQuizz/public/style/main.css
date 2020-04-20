@@ -146,7 +146,7 @@ body{
 /*** PAGE ACCUEIL ***/
 #container-accueil{
     position: absolute;
-    top:150px;
+    top:130px;
     left: 5%;
     width:90%;
     height: 550px;
@@ -167,6 +167,7 @@ body{
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+
 }
 .head-center{
     margin-left: 50px;
@@ -179,6 +180,7 @@ body{
     border-radius: 50%;
     margin-top: 10px;
     margin-left: 70px;
+    visibility: hidden;
 }
 .head-left p{
     font-size: 10px;
@@ -186,6 +188,7 @@ body{
     text-align: center;
     padding-left: 70px;
     margin-top: -5px;
+    visibility: hidden;
 }
 .head-right{
     margin-right: 80px;
@@ -217,7 +220,7 @@ body{
 /**** ACCUEIL ADMINISTRATION ****/
 .container-accueil-corps{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 .container-accueil-corps-menu{
     width: 30%;
@@ -366,7 +369,7 @@ body{
 .accueil-question-next form input:hover[type="submit"]{
     background-color:  #8d8170;
 }
-.form-create-user{
+#form-create-user{
     margin-left: 50px;
 }
 .label-create-user{
@@ -374,7 +377,7 @@ body{
     font-size: 12px;
     font-family: "HelveticaNeue-Light";
 }
-.form-create-user input{
+#form-create-user input[type="text"],input[type="password"]{
     display: block;
     width: 300px;
     height: 30px;
@@ -397,21 +400,25 @@ body{
     font-family: "HelveticaNeue-Light";
 }
 .hr-create-user{
-    border: 0.2px solid #a29684;
     margin-right: 50%;
 }
-#choice-file{
+#choice-file-button{
     height: 20px;
     width: 100px;
     border:0px;
-    color:white;
     font-size: 10px;
     background-color: #52bfd1;
     cursor: pointer;
-    margin: -15px 0 0 205px;
+    color: white;
+    margin: -15px 0 0 165px;
     font-weight: bold;
     border-radius: 3px;
 }
+#choice-file{
+   visibility: hidden;
+}
+
+
 .avatar-create-user{
     margin-top: 10px;
     font-size: 12px;
@@ -427,6 +434,7 @@ body{
     cursor: pointer;
     margin: 15px 0 0 70px;
     font-weight: bold;
+    display: block;
 }
 .avatar-create-user-img{
     border: 3px solid #52bfd1;
@@ -434,13 +442,158 @@ body{
     top: 64px;
     left: 505px;
     width:24%;
-    height: 40%;
+    height: 34%;
     border-radius: 50%;
 }
 .lbl-avatar-admin{
     position: absolute;
-    top: 265px;
+    top: 290px;
     left: 560px;
     font-size: 12px;
     color: black;
 }
+
+
+/*** PAGE CREATE USER ***/
+#container-create-user{
+    position: absolute;
+    top:140px;
+    left: 5%;
+    width:90%;
+    height: 550px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+.comment2{
+    margin-top: -1px;
+    font-size: 12px;
+    color: red;
+}
+
+/** TABLE LISTE JOUEURS **/
+#list-joueurs
+{
+    margin-left: 10%;
+    color: #8d8170;
+}
+#list-joueurs td
+{
+    padding-right: 200px;
+}
+#pts
+{
+    font-size:12px;
+}
+.td-first
+{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+/** PAGE JEUX **/
+#container-accueil-jeux
+{
+    background-color: #f1f1f1;
+    width: 97%;
+    height: 80%;
+    margin:auto;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+#container-accueil-question
+{
+    width: 70%;
+    border: 0.5px solid #44a3d1;
+    -webkit-border-radius: 12px / 24px;
+    -moz-border-radius: 12px / 24px;
+    border-radius:12px / 24px;
+    margin:12px;
+    position: relative;
+    background-color: white;
+}
+#next-question
+{
+    position: absolute;
+    top: 90%;
+    left: 85%;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #49d1cb;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    border:none;
+    box-shadow:  0 2px 3px 0 rgba(0,0,0,0.24);
+    cursor: pointer;
+
+
+}
+#before-question
+{
+    position: absolute;
+    top: 90%;
+    left: 20px;
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: #736c72;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    border:none;
+    box-shadow:  0 2px 3px 0 rgba(0,0,0,0.24);
+    cursor: pointer;
+
+}
+#container-accueil-score
+{
+    width: 28%;
+}
+#nav-score
+{
+    position: relative;
+    width: 100%;
+    height: 20%;
+    top: 20px;
+}
+
+#menu-top-score
+{
+    text-decoration: none;
+    color: #44a3d1;
+    font-size: 12px;
+    font-family: "Helvetica Neue";
+    position: absolute;
+    left: 20px;
+    top:30px;
+    text-align: center;
+}
+#menu-best-score
+{
+    text-decoration: none;
+    color: #44a3d1;
+    font-size: 12px;
+    font-family: "Helvetica Neue";
+    position: absolute;
+    left: 120px;
+    top:30px;
+}
+#div-score
+{
+    height: 70%;
+    width: 100%;
+    background-color: white;
+    margin-top: -35px;
+    border-radius: 0px 8px 8px 8px;
+    position: relative;
+}
+#comment
+{
+    color: silver;
+    font-size: 12px;
+    padding: 12px;
+}
+

@@ -177,7 +177,70 @@ body{
     border-radius: 50%;
     margin-left: 8px;
     margin-bottom: 5px;
+    visibility: visible;
 }
 .head-left p{
     padding-left: 0px;
+    visibility: visible;
+}
+.container-accueil-corps-menu .top img{
+    visibility: hidden;
+}
+.container-accueil-corps-menu .top p{
+    visibility: hidden;
+}
+#menu-admin img{
+    visibility: hidden;
+}
+.accueil-question-next form input[type="submit"]{
+    margin-left: 35%;
+}
+#form-create-user input[type="text"],input[type="password"]{
+    display: block;
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    color: #575156;
+    font-weight: bold;
+}
+.avatar-create-user-img {
+    border: 3px solid #52bfd1;
+    position: absolute;
+    top: 401px;
+    left: -100px;
+    width: 24%;
+    height: 24%;
+    border-radius: 50%;
+}
+.lbl-avatar-admin {
+    position: absolute;
+    top: 561px;
+    left: -105px;
+    font-size: 12px;
+    color: black;
+}
+#choice-file-button {
+    color: white;
+    margin: 0px 0 0 44px;
+}
+#create-user {
+    margin: 20px 0 0 0px;
+}
+
+#list-joueurs td
+{
+    padding-right: 2px;
+}
+#pts
+{
+    font-size:8px;
+}
+.td-first
+{
+    font-size: 14px;
+    font-weight: bold;
+}
+.td-simple
+{
+    font-size: 12px;
 }

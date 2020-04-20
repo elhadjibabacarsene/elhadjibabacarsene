@@ -1,18 +1,29 @@
 {
   "user1": {
-    "login" : "admin",
-    "password" : "admin",
-    "acces" : "admin",
-    "prenom" : "Babacar",
-    "nom" : "Séne",
-    "avatar" : "public/source/images/avatar/ebs.jpg"
+    "login": "admin",
+    "password": "admin",
+    "acces": "admin",
+    "prenom": "Babacar",
+    "nom": "S\u00e9ne",
+    "avatar": "public\/source\/images\/avatar\/ebs.jpg",
+    "score" : 0
   },
   "user2": {
-    "login" : "joueur",
-    "password" : "joueur",
-    "acces" : "joueur",
-    "prenom" : "Séne",
-    "nom" : "Babacar",
-    "avatar" : "public/source/images/avatar/ebs.jpg"
+    "login": "joueur",
+    "password": "joueur",
+    "acces": "joueur",
+    "prenom": "Fatou",
+    "nom": "S\u00e9ne",
+    "avatar": "public\/source\/images\/avatar\/slide-1-tn.jpeg",
+    "score" : 0
+  },
+  "user3": {
+    "login": "falla",
+    "password": "azertyuiop",
+    "acces": "joueur",
+    "prenom": "Mamy",
+    "nom": "fall",
+    "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
+    "score" : 0
   }
 }

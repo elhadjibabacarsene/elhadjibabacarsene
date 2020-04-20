@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="<?= URL ?>/public/style/main.css<?php echo "?".rand();?>">
     <link rel="stylesheet" media="screen and (min-width:768px) and (max-width:1023px)" href="<?=URL?>/public/style/tablette.css<?php echo "?".rand();?>">
     <link rel="stylesheet" media="screen and (max-width:767px)" href="<?=URL?>/public/style/mobile.css<?php echo "?".rand();?>">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- INCLUSION DES FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?=$title?></title>
@@ -36,9 +37,12 @@
 
 
     <!-- INCLUSION DES FICHIERS JS -->
+
     <script text="type/javascript" src="<?URL?>public/js/config.js<?php echo "?".rand();?>"></script>
-    <script text="type/javascript" src="<?=URL?>public/js/validationForm.js<?php echo "?".rand();?>"></script>
-    <script text="type/javascript" src="<?URL?>public/js/accueilAdmin.js<?php echo "?".rand();?>"></script>
-    <script text="type/javascript" src="<?=URL?>public/js/interactiveMenuAdmin.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/menu_interactif.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/affichageScore.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/validationForm.js<?php echo "?".rand();?>"></script>
+<!--    <script text="type/javascript" src="--><?///*URL*/?><!--public/js/accueilAdmin.js--><?php ///*echo "?".rand();*/?><!--"></script>--!>-->
+<!--    <script text="type/javascript" src="--><?//URL?><!--public/js/interactiveMenuAdmin.js--><?php //echo "?".rand();?><!--"></script>-->
 </body>
 </html>

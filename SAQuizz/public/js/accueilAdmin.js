@@ -65,54 +65,118 @@ function listQuestion($idDiv){
 
 
 function createUser($idDiv){
+    //Récupération du container-accueil
+    let containerAccueil = document.getElementById("container-accueil");
+    containerAccueil.style.height = "640px";
+    containerAccueil.style.marginBottom = "12px";
+    //Récupération du ovelray
+    let overlay = document.getElementById("color-overlay");
+    overlay.style.height = "110%";
     //Récupération de la div
     let divCorps = document.getElementById($idDiv);
     divCorps.style.position  = "relative";
+    divCorps.style.height = "531px";
+
     //Création des éléments de la zone
+    //LE TITRE
     let title = document.createElement("h1");
+    title.classList.add("title-create-user");
+    title.innerText = "s'incrire";
+    //LE SOUS-TITRE
     let p = document.createElement("p");
+    p.classList.add("comment-create-user");
+    p.innerText = "Pour proposer des quizz";
+    //LE HR
     let hr = document.createElement("hr");
     hr.classList.add("hr-create-user");
+
+    //CREATION DU FORMULAIRE
     let formCreateUser =  document.createElement("form");
     formCreateUser.method = "POST";
-    formCreateUser.classList.add("form-create-user");
+    formCreateUser.id = "form-create-user";
+    //CREATION DE lA ZONE D'AFFICHAGE AVATAR
     let avatarPhoto =  document.createElement("img");
     avatarPhoto.classList.add("avatar-create-user-img");
     avatarPhoto.src = "public/source/images/avatar/ebs.jpg";
 
-    //Affection de propriétés
-    title.classList.add("title-create-user");
-    title.innerText = "s'incrire";
-    p.classList.add("comment-create-user");
+    //CREATION DE L'ATTRIBUT ERROR
+    var error = document.createAttribute("error");
+    error.value = "";
 
-    //Création des éléments du formulaire et de leurs proriétés
+
+
+
+    //CREATION DES ELEMENTS DU FORMULAIRES ET DE LEURS PROPRIETES
+
+    //PRENOM USER
+    let lblprenom = document.createElement("label");
+    lblprenom.innerText = "Prénom";
+    lblprenom.classList.add('label-create-user');
     let prenomUser = document.createElement("input");
     prenomUser.type = "text";
     prenomUser.name = "prenom-user";
+    prenomUser.setAttributeNode(error);
+    prenomUser.setAttribute("error","error-1");
+    let prenomError = document.createElement("p");
+    prenomError.id = "error-1";
+
+    //NOM USER
+    let lblnom = document.createElement("label");
+    lblnom.innerText = "Nom";
+    lblnom.classList.add('label-create-user');
     let nomUser = document.createElement("input");
     nomUser.type = "text";
     nomUser.name = "nom-user";
+    prenomUser.setAttributeNode(error);
+    prenomUser.setAttribute("error","error-2");
+    let nomError = document.createElement("p");
+    nomError.id = "error-2";
+
+    //LOGIN USER
+    let lbllogin = document.createElement("label");
+    lbllogin.innerText = "Login";
+    lbllogin.classList.add('label-create-user');
     let loginUser = document.createElement("input");
     loginUser.type = "text";
     loginUser.name = "login-user";
-    let  passwordUser = document.createElement("input");
-    passwordUser.type = "text";
-    passwordUser.name = "password-user";
-    let confirmPasswordUser = document.createElement("input");
-    confirmPasswordUser.type = "text";
-    confirmPasswordUser.name = "login-user";
-    let lblprenom = document.createElement("label");
-    let lblnom = document.createElement("label");
-    let lbllogin = document.createElement("label");
+    prenomUser.setAttributeNode(error);
+    prenomUser.setAttribute("error","error-3");
+    let loginError = document.createElement("p");
+    loginError.id = "error-3";
+
+    //PASSWORD USER
     let lblpassword = document.createElement("label");
+    lblpassword.innerText = "Password";
+    lblpassword.classList.add('label-create-user');
+    let  passwordUser = document.createElement("input");
+    passwordUser.type = "password";
+    passwordUser.name = "password-user";
+    prenomUser.setAttributeNode(error);
+    prenomUser.setAttribute("error","error-3");
+    let passwordError = document.createElement("p");
+    passwordError.id = "error-4";
+
+    //CONFIRM PASSWORD USER
     let lblconfirmpassword = document.createElement("label");
+    lblconfirmpassword.innerText = "Confirmer password";
+    lblconfirmpassword.classList.add('label-create-user');
+    let confirmPasswordUser = document.createElement("input");
+    confirmPasswordUser.type = "password";
+    confirmPasswordUser.name = "login-user";
+    let confirmPasswordError = document.createElement("p");
+    confirmPasswordError.id = "error-5";
+
+    //CHOIX DE L'AVATAR
     let  lblchoicefile = document.createElement("label");
     lblchoicefile.innerText = "Avatar";
     lblchoicefile.classList.add('avatar-create-user');
+
+    //AFFICHAGE DE L'AVATAR
     let lblavatarAdmin = document.createElement("label");
     lblavatarAdmin.innerText = "Avatar admin";
     lblavatarAdmin.classList.add("lbl-avatar-admin");
-    //Boutons submit
+
+    //CREATIONS DES BUTTONS DU FORMULAIRE
     let submitFile = document.createElement("input");
     submitFile.type = "submit";
     submitFile.name = "choice-file";
@@ -124,43 +188,40 @@ function createUser($idDiv){
     submitCreateUser.value = "Créer un compte";
     submitCreateUser.id = "create-user";
 
-    //labels
-    lblprenom.innerText = "Prénom";
-    lblprenom.classList.add('label-create-user');
-    lblnom.innerText = "Nom";
-    lblnom.classList.add('label-create-user');
-    lbllogin.innerText = "Login";
-    lbllogin.classList.add('label-create-user');
-    lblpassword.innerText = "Password";
-    lblpassword.classList.add('label-create-user');
-    lblconfirmpassword.innerText = "Confirmer password";
-    lblconfirmpassword.classList.add('label-create-user');
-
-
 
 
     //Insertion des éléments dur formulaire dans le formulaire
     formCreateUser.appendChild(lblprenom);
     formCreateUser.appendChild(prenomUser);
+    formCreateUser.appendChild(prenomError);
+
     formCreateUser.appendChild(lblnom);
     formCreateUser.appendChild(nomUser);
+    formCreateUser.appendChild(nomError);
+
     formCreateUser.appendChild(lbllogin);
     formCreateUser.appendChild(loginUser);
+    formCreateUser.appendChild(loginError);
+
     formCreateUser.appendChild(lblpassword);
     formCreateUser.appendChild(passwordUser);
+    formCreateUser.appendChild(passwordError);
+
     formCreateUser.appendChild(lblconfirmpassword);
     formCreateUser.appendChild(confirmPasswordUser);
+    formCreateUser.appendChild(confirmPasswordError);
+
     formCreateUser.appendChild(lblchoicefile);
     formCreateUser.appendChild(submitFile);
     formCreateUser.appendChild(submitCreateUser);
-
-    //Contenu des textes
-    p.innerText = "Pour proposer des quizz";
 
     divCorps.appendChild(title);
     divCorps.appendChild(p);
     divCorps.appendChild(hr);
     divCorps.appendChild(formCreateUser);
     divCorps.appendChild(avatarPhoto);
-    divCorps.appendChild(lblavatarAdmin)
+    divCorps.appendChild(lblavatarAdmin);
+
+
+
 }

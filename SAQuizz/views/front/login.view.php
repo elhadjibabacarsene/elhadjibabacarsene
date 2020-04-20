@@ -4,7 +4,7 @@ ob_start();
 
 ?>
 
-<div class="form-login">
+<div class="form-login" id="form-login">
 
     <div class="form-login-head">
         <h3>Login Form</h3>
@@ -17,8 +17,8 @@ ob_start();
                 <img class="icone-password" src="<?=URL?>public/source/images/icônes/icone-password.png" alt="">
                     <input type="password" name="password" error="error-2" id="password" placeholder="Password" value="<?=(isset($_POST['password'])) ? $password : ""?>"">
                     <p class="comment" id="error-2"><?=$passwordError?></p>
-                    <input type="submit" value="Connexion">
-            <a href="#">S'inscrire pour jouer ?</a>
+                    <input type="submit" value="Connexion" name="se-connecter" id="se-connecter">
+            <a href="inscription">S'inscrire pour jouer ?</a>
         </form>
     </div>
 </div>

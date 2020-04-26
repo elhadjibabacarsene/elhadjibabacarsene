@@ -16,7 +16,7 @@
     </div>
     <div id="ic-4" categorie="create">
         <div class="ic-color"></div>
-        <li><a href="#">Créer question</a></li>
+        <li><a href="<?=URL?>create-question">Créer question</a></li>
         <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-ajout.png">
     </div>
 </ul>

@@ -148,6 +148,47 @@ function pagination($tab){
         echo '<script>alert("'.$message.'")</script>';
     }
 
+/**
+ * renvoi le nombre d'input reponse
+ * @param $tab array $_POST
+ * @return int le nombre d'input reponse
+ */
+    function getNbreInputResponse($tab)
+    {
+        $cpt=0;
+        foreach ($tab as $key=>$value)
+        {
+            if(preg_match("#^reponse[0-9]#",$key))
+            {
+                $cpt++;
+            }
+        }
+        return $cpt;
+    }
+
+
+/**
+ * @param $tab array $_POST
+ * @param $nbre_element int le nbre d'input
+ * @return bool true=>si tous les champs sont vides or false=>si il existe un seul champs non vide
+ */
+    function verifyAllInputReponse($tab,$nbre_element)
+    {
+        $c=true;
+        for($i=1;$i<=$nbre_element;$i++)
+        {
+            if(empty($tab['reponse'.$i]))
+            {
+                $c=true;
+            }else{
+                $c=false;
+                break;
+            }
+        }
+        return $c;
+    }
+
+
 //CONSTANTE QUI NOUS PERMET D'ACCEDER A L'URL SOURCE
 define("URL",str_replace("index.php","", (isset($_SERVER["HTTPS"])? "https" : "http"). "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 

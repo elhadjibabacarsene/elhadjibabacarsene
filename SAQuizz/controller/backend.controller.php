@@ -157,6 +157,7 @@ function getPageCreateUser(){
 
 function getPageListeJoueurs(){
 
+    $title = "Liste des joueurs";
 
     if(isset($_SESSION) && !empty($_SESSION))
     {
@@ -206,4 +207,192 @@ function getPageListeJoueurs(){
     }
 
     require_once 'views/back/listejoueurs.view.php';
+}
+
+
+
+function getPageCreateQuestion()
+{
+    $title = "Créer une question";
+
+
+    //On gère les privilièges
+    if(isset($_SESSION) && !empty($_SESSION))
+    {
+        if($_SESSION['acces'] === "admin")
+        {
+            //On gère la déconnexion
+            if(isset($_POST['deconnexion']) && $_POST['deconnexion'] === "Déconnexion")
+            {
+                session_destroy();
+                header("location:login");
+                echo '<script> location.replace("login"); </script>';
+            }
+
+            //Si l'admin veut enregistrer une question
+            if(isset($_POST['save_question']))
+            {
+                //var_dump($_POST);
+                //echo getNbreInputResponse($_POST);
+                $nbre_point_messageError = "";
+
+                $question = $_POST['question'];
+                $type_reponse = $_POST['type_reponse'];
+                $nbre_point = $_POST['nbre_point'];
+                $isSuccess = true;
+
+                $nbre_de_reponse = getNbreInputResponse($_POST);
+
+
+                //On vérifie si le nombre de point est supérieur ou égale à 1
+                if($nbre_point<1)
+                {
+                    $nbre_point_messageError = "Le nombre doit être supérieur ou égale à 1";
+                    $isSuccess = false;
+                }
+
+                //On vérifie si au mois la question contient une réponse
+                if(verifyAllInputReponse($_POST,$nbre_de_reponse))
+                {
+                    afficheMessageAlert("La question doit contenir au moins une réponse");
+                    $isSuccess = false;
+                }
+
+
+                if($isSuccess)
+                {
+                    //Si la question est de type TEXTE
+                    switch ($_POST['type_reponse'])
+                    {
+                        case "texte":
+                            $reponse = $_POST['reponse1'];
+                            //On décode le fichier JSON
+                            $json_user_file_decode = transformFileJson("question.json");
+
+                            //on affecte au nouveau user sont ID
+                            $array_data = $json_user_file_decode;
+                            $newIdQuestion = countJson($json_user_file_decode) + 1;
+                            $data = array(
+                                "question" => $question,
+                                "nbre_point" => $nbre_point,
+                                "type_reponse" => $type_reponse,
+                                "reponses" => $reponse
+                            );
+
+                            $array_data['question'.$newIdQuestion] = $data;
+                            $finally_array = json_encode($array_data);
+                            $databaseURL = "data/question.json";
+                            if(file_put_contents($databaseURL,$finally_array)){
+                                afficheMessageAlert("La question a été enregistrer avec success");
+                                echo '<script> location.replace("create-question"); </script>';
+                            }
+                        break;
+
+                        case "choixSimple":
+                            $bonnes_reponse = array();
+                            $mauvaise_reponse = array();
+                            for($i=0;$i<getNbreInputResponse($_POST);$i++)
+                            {
+                                if(isset($_POST['reponse'.$i]))
+                                {
+                                    if(isset($_POST['radio-reponse']))
+                                    {
+                                        if('reponse'.$i === $_POST['radio-reponse'])
+                                        {
+                                            $bonnes_reponse [] = $_POST['reponse'.$i];
+                                        }else{
+                                            $mauvaise_reponse [] = $_POST['reponse'.$i];
+                                        }
+                                    }
+                                }
+                            }
+                            //On décode le fichier JSON
+                            $json_user_file_decode = transformFileJson("question.json");
+
+                            //on affecte au nouveau user sont ID
+                            $array_data = $json_user_file_decode;
+                            $newIdQuestion = countJson($json_user_file_decode) + 1;
+                            $data = array(
+                                "question" => $question,
+                                "nbre_point" => $nbre_point,
+                                "type_reponse" => $type_reponse,
+                                "reponses" => array(
+                                    "bonnes_reponses" => $bonnes_reponse,
+                                    "mauvaise_reponses" => $mauvaise_reponse
+                                )
+                            );
+
+                            $array_data['question'.$newIdQuestion] = $data;
+                            $finally_array = json_encode($array_data);
+                            $databaseURL = "data/question.json";
+                            if(file_put_contents($databaseURL,$finally_array)){
+                                afficheMessageAlert("La question a été enregistrer avec success");
+                                echo '<script> location.replace("create-question"); </script>';
+                            }
+                            break;
+
+                        case "choixMultiple":
+                            $bonnes_reponse = array();
+                            $mauvaise_reponse = array();
+                            for($i=0;$i<getNbreInputResponse($_POST);$i++)
+                            {
+                                if(isset($_POST['reponse'.$i]))
+                                {
+                                    if(isset($_POST['checkreponse']))
+                                    {
+                                        foreach ($_POST['checkreponse'] as $key=>$value)
+                                        {
+                                            if(('reponse'.$i) === $value)
+                                            {
+                                                $bonnes_reponse [] = $_POST[$value];
+                                            }
+                                            if(('reponse'.$i) !== $value)
+                                            {
+                                                $mauvaise_reponse [] = $_POST[$value];
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                            //On décode le fichier JSON
+                            $json_user_file_decode = transformFileJson("question.json");
+
+                            //on affecte au nouveau user sont ID
+                            $array_data = $json_user_file_decode;
+                            $newIdQuestion = countJson($json_user_file_decode) + 1;
+                            $data = array(
+                                "question" => $question,
+                                "nbre_point" => $nbre_point,
+                                "type_reponse" => $type_reponse,
+                                "reponses" => array(
+                                    "bonnes_reponses" => $bonnes_reponse,
+                                    "mauvaise_reponses" => $mauvaise_reponse
+                                )
+                            );
+
+                            $array_data['question'.$newIdQuestion] = $data;
+                            $finally_array = json_encode($array_data);
+                            $databaseURL = "data/question.json";
+                            if(file_put_contents($databaseURL,$finally_array)){
+                                afficheMessageAlert("La question a été enregistrer avec success");
+                                echo '<script> location.replace("create-question"); </script>';
+                            }
+                            break;
+
+                    }
+                }
+            }
+
+
+        }else{
+            //Affichage message erreur et redirection si l'utilisateur n'est pas un admin
+            afficheMessageAlert("Vous n'avez pas les autorisations pour accéder à cette page");
+            echo '<script> location.replace("jeux"); </script>';
+        }
+    }else{
+        echo '<script> location.replace("login"); </script>';
+    }
+    
+    require 'views/back/create_question.view.php';
 }

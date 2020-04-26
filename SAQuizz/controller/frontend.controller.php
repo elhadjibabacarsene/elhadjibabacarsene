@@ -125,9 +125,14 @@ function getPageInscription(){
             $login              = $_POST['login-user'];
             $password           = $_POST['password-user'];
             $confirmpassword    = $_POST['confirm-password-user'];
+
+            //On récupère le nom de l'image
             $image              = $_FILES["choice-file"]["name"];
+            //On récupère lien de l'image (destination)
             $imagePath          = 'public/source/images/avatar/'. basename($image);
+            //On récupère l'extension de l'image
             $imageExtension     = pathinfo($imagePath,PATHINFO_EXTENSION);
+
             $isUploadSuccess    = false;
             $isSucces           = true;
 

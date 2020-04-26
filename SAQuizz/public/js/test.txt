@@ -1,0 +1,95 @@
+/* SCRIPT D'AJOUT DE INPUT */
+
+//On récupère l'image d'ajout de réponses
+let img_ajout_rep = document.getElementById("ic-ajout-rep");
+
+//On récupère la div contenant les réponses
+let div_reponses = document.getElementById("reponses");
+
+//Si on clique sur l'image ajout réponse
+img_ajout_rep.addEventListener("click",function(e){
+
+//On récupère le dernier div des éléments réponses
+    let div_rep = div_reponses.lastElementChild;
+
+//On récupère l'input des réponses
+    let tab_input_rep = div_rep.getElementsByTagName("input");
+    let input_rep = tab_input_rep[0];
+
+//On extrait l'id de notre dernier input réponse
+    let id_last_input_rep = input_rep.id.match(/[^a-z]/i);
+
+    /* //On extrait l'id de l'erreur
+    let error_input_rep = input_rep.getAttribute("error");
+    let id_error_input_rep = error_input_rep.match(/[^a-z\-]/i);*/
+
+//On détermine l'id du nouveau div
+    let id_new_div = (parseInt(id_last_input_rep)+1);
+
+//On crée la nouvelle div
+    let new_div = document.createElement("div");
+    new_div.id = "reponse-" + id_new_div;
+    new_div.classList.add("reponse-div");
+
+//On crée un nouveau label
+    let new_label = document.createElement("label");
+    new_label.innerText = "Réponse " + id_new_div;
+
+//on crée un nouveau input
+    let new_input = document.createElement("input");
+    new_input.type = "text";
+    new_input.name = "reponse" + id_new_div;
+    new_input.id = new_input.name;
+//new_input.setAttribute("error","error-" + (parseInt(id_error_input_rep)+1));
+
+//On crée le checkbox de la réponse
+    let checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.setAttribute("reponse","reponse" + id_new_div);
+    checkbox.name = "checkbox-reponse" + id_new_div;
+
+//On crée le radio de la réponse
+    let radio = document.createElement("input");
+    radio.type = "radio";
+    radio.setAttribute("reponse","reponse" + id_new_div);
+    radio.name = "radio-reponse" + id_new_div;
+
+//On crée l'icone delete de la réponse
+    let img = document.createElement("img");
+    img.src = "public/source/images/icônes/ic-supprimer.png";
+    img.id = "ic-delete";
+    img.setAttribute("reponse","reponse" + id_new_div);
+
+//On crée le message d'erreur de la réponse
+    let errorMessage = document.createElement("p");
+    errorMessage.classList.add("comment");
+//errorMessage.setAttribute("id","error-"+(parseInt(id_error_input_rep)+1));*/
+
+//On place les éléments dans la div
+    new_div.appendChild(new_label);
+    new_div.appendChild(new_input);
+    new_div.appendChild(checkbox);
+    new_div.appendChild(radio);
+    new_div.appendChild(img);
+    new_div.appendChild(errorMessage);
+
+//On place la div dans div reponse
+    div_reponses.appendChild(new_div);
+
+//On récupère la div des réponses
+    let divs_rep = div_reponses.getElementsByTagName("div");
+    for(let div of divs_rep){
+        let img = div.getElementsByTagName("img");
+        img[0].addEventListener("click",function(e){
+            div_reponses.removeChild(div);
+        });
+    }
+
+});
+
+
+
+/* SCRIPT DE SUPPRESSION D'INPUT */
+
+
+

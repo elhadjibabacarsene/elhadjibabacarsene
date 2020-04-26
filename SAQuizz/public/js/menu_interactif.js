@@ -36,6 +36,11 @@ function activeMenu(idDivItem,nomIcone){
 
         case "liste-joueurs":
             activeMenu("ic-3","ic-liste-active.png");
+        break;
+
+        case "create-question":
+            activeMenu("ic-4", "ic-ajout-active.png");
+        break;
     }
 
 

@@ -34,23 +34,17 @@ function formEmptyControl(form,idsubmit){
         submit.addEventListener("click",function(e){
             var error = false;
             //Affichage du message d'erreur ce champs est obligatoire
-            for(input of inputs){/*
-                $img = true;
-                if(input.type == "file"){
-                    if (imgAvatar.src !== "public/source/images/votre-photo-ici.jpg"){
-                        $img = false;
-                    }
-                }*/
-                if(!input.value){
+            for(input of inputs){
+                if(!input.value &&  !input.id.match(/^reponse[0-9]/)){
                     error = true;
-                    if(input.hasAttribute("error")){
-                        //Récupération de l'attribut erreur de l'input
-                        messageErrorAttribute = input.getAttribute("error");
-                        //Récupération de l'attribut erreur par son id
-                        messageError = document.getElementById(messageErrorAttribute);
-                        //Affichage de l'erreur
-                        messageError.innerText = "Ce champ est obligatoire";
-                    }
+                        if(input.hasAttribute("error")){
+                            //Récupération de l'attribut erreur de l'input
+                            messageErrorAttribute = input.getAttribute("error");
+                            //Récupération de l'attribut erreur par son id
+                            messageError = document.getElementById(messageErrorAttribute);
+                            //Affichage de l'erreur
+                            messageError.innerText = "Ce champ est obligatoire";
+                        }
                 }
             }
             //On affiche l'erreur si le mot de pass contient moins de caractère
@@ -84,21 +78,24 @@ function formEmptyControl(form,idsubmit){
 
 switch (id_page) {
     case "form-login" :
-
         //On contrôle le formulaire de connexion (login)
         var formLogin = document.getElementById('form-login');
-        formEmptyControl(formLogin,"se-connecter");
-
+        formEmptyControl(formLogin, "se-connecter");
         break;
 
     case "container-create-user" :
-
         //On contrôle le formulaire create user
         var formCreateUser = document.getElementById("form-create-user");
-        formEmptyControl(formCreateUser,"create-user");
+        formEmptyControl(formCreateUser, "create-user");
+        break;
 
+    case "create-question" :
+        //On contrôle le formulaire create question
+        var formCreateQuestion = document.getElementById("form-create-question");
+        formEmptyControl(formCreateQuestion,"save_question");
         break;
 }
+
 
 
 

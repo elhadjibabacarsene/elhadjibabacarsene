@@ -37,8 +37,8 @@
 
 
     <!-- INCLUSION DES FICHIERS JS -->
-
-    <script text="type/javascript" src="<?URL?>public/js/config.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/create_question.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/nbre_reponse.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/menu_interactif.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/affichageScore.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/validationForm.js<?php echo "?".rand();?>"></script>

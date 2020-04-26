@@ -21,6 +21,8 @@ if(isset($_GET['page']) && !empty($_GET['page'])){
         break;
         case "liste-joueurs" : getPageListeJoueurs();
         break;
+        case "create-question" : getPageCreateQuestion();
+        break;
     }
 
 

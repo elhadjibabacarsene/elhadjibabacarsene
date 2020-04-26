@@ -6,7 +6,7 @@
     "prenom": "Babacar",
     "nom": "S\u00e9ne",
     "avatar": "public\/source\/images\/avatar\/ebs.jpg",
-    "score" : 0
+    "score": 0
   },
   "user2": {
     "login": "joueur",
@@ -15,7 +15,7 @@
     "prenom": "Fatou",
     "nom": "S\u00e9ne",
     "avatar": "public\/source\/images\/avatar\/slide-1-tn.jpeg",
-    "score" : 0
+    "score": 0
   },
   "user3": {
     "login": "falla",
@@ -24,6 +24,23 @@
     "prenom": "Mamy",
     "nom": "fall",
     "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
-    "score" : 0
+    "score": 0
+  },
+  "user4": {
+    "login": "assane",
+    "password": "12345678",
+    "acces": "admin",
+    "prenom": "Assane",
+    "nom": "Nging",
+    "avatar": "public\/source\/images\/avatar\/fonzie.jpg"
+  },
+  "user5": {
+    "login": "morndiaye",
+    "password": "morndiaye",
+    "acces": "joueur",
+    "prenom": "Mor",
+    "nom": "Ndiaye",
+    "avatar": "public\/source\/images\/avatar\/Odin5.jpg",
+    "score": 0
   }
 }

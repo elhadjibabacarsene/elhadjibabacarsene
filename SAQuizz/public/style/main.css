@@ -597,3 +597,158 @@ body{
     padding: 12px;
 }
 
+/*** PAGE CREATE QUESTION ***/
+.lbl-param-question
+{
+    color: #44a3d1;
+    font-weight: bold;
+    font-size: 20px;
+}
+#create-question-div
+{
+    border: 0.5px solid #44a3d1;
+    -webkit-border-radius: 12px / 24px;
+    -moz-border-radius: 12px / 24px;
+    border-radius:12px / 24px;
+    height: 80%;
+    margin:0px 20px 0px 20px;
+}
+#form-create-question{
+    margin:  12px 0px 0px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+#form-create-question div
+{
+    margin-bottom: 12px;
+}
+#form-create-question input,select
+{
+    border: none;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    border-color: #44a3d1;
+    background-color: #eeeeee;
+    color:#736c72;
+    padding-left: 10px;
+    font-family: "Helvetica Neue";
+    font-size: 14px;
+    height: 60%;
+}
+#form-create-question label
+{
+    font-weight: bold;
+    font-size: 16px;
+    color: #736c72;
+    font-family: "Helvetica Neue";
+    margin-right: 10px;
+}
+#question{
+    display: flex;
+    flex-wrap: wrap;
+    height:100px;
+}
+#question input
+{
+    width: 50%;
+    height: 100%;
+}
+
+#nbre-point
+{
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+#nbre-point label{
+    margin-right: 10px;
+}
+#nbre-point input
+{
+    width: 8%;
+}
+
+#type-reponse
+{
+    height: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+#type-reponse select
+{
+    width: 40%;
+    margin-right: 12px;
+}
+#ic-ajout-rep
+{
+    height: 60%;
+    cursor: pointer;
+    visibility: hidden;
+}
+#reponses{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.reponse-div{
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.reponse-div input[type="text"]
+{
+    width: 40%;
+}
+#ic-delete
+{
+    cursor: pointer;
+}
+.ic-delete-1
+{
+    visibility: hidden;
+}
+#save-question
+{
+
+}
+#save-question input
+{
+    display: flex;
+    width: 95px;
+    height: 30px;
+    color: white;
+    background-color: #49d1cb;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.24);
+    border:none;
+    box-shadow:  0 2px 3px 0 rgba(0,0,0,0.24);
+    cursor: pointer;
+}
+.comment-1
+{
+    font-size: 12px;
+    color: red;
+    margin-left: 5px;
+}
+
+#container-create-question
+{
+    position: absolute;
+    top:130px;
+    left: 5%;
+    width:90%;
+    height: 550px;
+    background-color: #f2f2f2;
+    border-radius: 3px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+

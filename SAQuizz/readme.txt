@@ -1,4 +1,6 @@
-/**** INFORAMTION DE CONNEXION SaQuizz Version 0.2.0 ****/
+/**** SaQuizz Version 0.3.2 ****/
+
+/* INFORAMTION DE CONNEXION */
 
 ---------- ADMIN ----------
 Login: admin

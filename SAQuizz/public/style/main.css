@@ -347,6 +347,7 @@ body{
     border-radius:12px / 24px;
     height: 80%;
     margin:0px 20px 0px 20px;
+    overflow:scroll;
 }
 .accueil-question-next{
     background-color: #f8f3f1;
@@ -612,6 +613,7 @@ body{
     border-radius:12px / 24px;
     height: 80%;
     margin:0px 20px 0px 20px;
+    overflow:scroll;
 }
 #form-create-question{
     margin:  12px 0px 0px 30px;

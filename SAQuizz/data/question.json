@@ -6,156 +6,53 @@
     "reponses": "Babacar"
   },
   "question2": {
-    "question": "Comment s'appelle la femme de Babacar",
-    "nbre_point": "20",
+    "question": "Quels est la premi\u00e8re \u00e9cole de Codage du S\u00e9n\u00e9gal ?",
+    "nbre_point": "12",
     "type_reponse": "texte",
-    "reponses": "Zahra"
+    "reponses": "Sonatel Academy"
   },
   "question3": {
-    "question": "Quel est le langage de programmation ?",
-    "nbre_point": "15",
+    "question": "Quel est l'intrus parmi ces r\u00e9ponses ?",
+    "nbre_point": "16",
     "type_reponse": "choixSimple",
     "reponses": {
-      "bonnes_reponses": [],
+      "bonnes_reponses": [
+        "Maths"
+      ],
       "mauvaise_reponses": [
         "HTML",
-        "Fran\u00e7ais",
-        "Anglais"
+        "JAVA",
+        "PHP"
       ]
     }
   },
   "question4": {
-    "question": "Quels est le nom de fille ?",
-    "nbre_point": "12",
-    "type_reponse": "choixSimple",
+    "question": "Quelle est la devise du S\u00e9n\u00e9gal ?",
+    "nbre_point": "10",
+    "type_reponse": "choixMultiple",
     "reponses": {
-      "bonnes_reponses": [],
+      "bonnes_reponses": [
+        "Un peuple",
+        "Une foi",
+        "Un but"
+      ],
       "mauvaise_reponses": [
-        "Babacar",
-        "Fatou",
-        "Oumar"
+        "Un objectif",
+        "Une foie"
       ]
     }
   },
   "question5": {
-    "question": "Quels est le nom de gar\u00e7on ?",
+    "question": "Quel est l'\u00e9diteur de code ?",
     "nbre_point": "12",
     "type_reponse": "choixSimple",
     "reponses": {
       "bonnes_reponses": [
-        "Ibrahima"
+        "VS code"
       ],
       "mauvaise_reponses": [
-        "Fatou",
-        "Mamy"
-      ]
-    }
-  },
-  "question6": {
-    "question": "Quels sont les r\u00e9gions du S\u00e9n\u00e9gal ?",
-    "nbre_point": "12",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "Dakar",
-        "Thi\u00e8s"
-      ],
-      "mauvaise_reponses": [
-        "Paris",
-        "Paris",
-        "Dakar",
-        "Thi\u00e8s"
-      ]
-    }
-  },
-  "question7": {
-    "question": "Quel est la device du S\u00e9n\u00e9gal ?",
-    "nbre_point": "4",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "Un peuple",
-        "Une foi",
-        "Un but"
-      ],
-      "mauvaise_reponses": [
-        "Un peuple",
-        "Un peuple",
-        "Une foi",
-        "Une foi",
-        "Un objectif",
-        "Un objectif",
-        "Un objectif",
-        "Un but",
-        "Un but"
-      ]
-    }
-  },
-  "question8": {
-    "question": "Quels sont les villes des USA ?",
-    "nbre_point": "12",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "New York",
-        "Los Angeles"
-      ],
-      "mauvaise_reponses": [
-        "New York",
-        "Dakar",
-        "Dakar",
-        "Los Angeles"
-      ]
-    }
-  },
-  "question9": {
-    "question": "Quels sont les noms du proph\u00e8te PSL ?",
-    "nbre_point": "200",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "Mouhamad",
-        "Moustapha"
-      ],
-      "mauvaise_reponses": [
-        "Mouhamad",
-        "Moustapha",
-        "Ibrahim",
-        "Ibrahim"
-      ]
-    }
-  },
-  "question10": {
-    "question": "Quel est le langage de programmation ?",
-    "nbre_point": "12",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "HTML",
-        "PHP"
-      ],
-      "mauvaise_reponses": [
-        "PHP",
-        "HTML",
-        "HTML",
-        "PHP"
-      ]
-    }
-  },
-  "question11": {
-    "question": "Quel est le langage de programmation ?",
-    "nbre_point": "12",
-    "type_reponse": "choixMultiple",
-    "reponses": {
-      "bonnes_reponses": [
-        "Fatou",
-        "sqs"
-      ],
-      "mauvaise_reponses": [
-        "sqs",
-        "Fatou",
-        "Fatou",
-        "sqs"
+        "Excel",
+        "Word"
       ]
     }
   }

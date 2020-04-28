@@ -188,6 +188,20 @@ function pagination($tab){
         return $c;
     }
 
+/**
+ * @param $val string la valeur à tester
+ * @return bool true si c'est numérique OU false si c'est le contraire
+ */
+    function isIntValue($val)
+    {
+        if(preg_match( '#[^0-9]#' ,$val))
+        {
+            $st=false;
+        }else{
+            $st=true;
+        }
+        return $st;
+    }
 
 //CONSTANTE QUI NOUS PERMET D'ACCEDER A L'URL SOURCE
 define("URL",str_replace("index.php","", (isset($_SERVER["HTTPS"])? "https" : "http"). "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));

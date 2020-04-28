@@ -7,7 +7,8 @@ require_once 'config/config.php';
 /**
  * FONCTION QUI NOUS PERMET D'ACCEDER A LA PAGE D'ACCUEIL (admin)
  */
-function getPageAccueil(){
+function getPageAccueil()
+{
     $title = "Accueil";
 
     if(isset($_SESSION) && !empty($_SESSION))
@@ -24,6 +25,55 @@ function getPageAccueil(){
             session_destroy();
             header("location:login");
             echo '<script> location.replace("login"); </script>';
+        }
+
+            //Si le boutton nombre de questions est validés
+            if(isset($_POST['submit-nbre-question']) && !empty($_POST['submit-nbre-question']))
+            {
+                $isSucces=true;
+                $nbre_question = $_POST['nbre-question'];
+
+                if(!isIntValue($nbre_question))
+                {
+                    $isSucces = false;
+                    afficheMessageAlert("Le nombre de question doit être en entier");
+                }
+            }
+
+        //On decode le fichier JSON QUESTION
+        $json_question_decode = transformFileJson("question.json");
+        //On compte le nombre de question dans notre fichier JSON
+        $nbre_question_in_json = countJson($json_question_decode);
+        //var_dump($json_question_decode);
+
+           $questions_table = $json_question_decode;
+
+        //GESTION DE LA PAGINATION
+        //NOMBRE DE VALEUR PAR PAGE
+        $nbreParPage = 5;
+        //NOMBRE DE PAGES
+        $nbreDePage = ceil($nbre_question_in_json / $nbreParPage);
+        //Affichage de la valeur de la première page
+        if(!isset($_GET['indice']))
+        {
+            $page = 1;
+        }else{
+            $page = $_GET['indice'];
+        }
+        $page = (int)$page;
+        if(isset($_POST['submit-question-next']))
+        {
+            header_remove();
+            header("location:accueil&indice=".((int)$page+1));
+        }
+        if(isset($_POST['submit-question-previous']))
+        {
+            if($page>1)
+            {
+                header_remove();
+                header("location:accueil&indice=".((int)$page-1));
+            }
+
         }
     }else
         {
@@ -314,7 +364,7 @@ function getPageCreateQuestion()
                                     "type_reponse" => $type_reponse,
                                     "reponses" => array(
                                         "bonnes_reponses" => $bonnes_reponse,
-                                        "mauvaise_reponses" => $mauvaise_reponse
+                                        "mauvaises_reponses" => $mauvaise_reponse
                                     )
                                 );
 
@@ -378,7 +428,7 @@ function getPageCreateQuestion()
                                     "type_reponse" => $type_reponse,
                                     "reponses" => array(
                                         "bonnes_reponses" => $bonnes_reponse,
-                                        "mauvaise_reponses" => $mauvaise_reponse
+                                        "mauvaises_reponses" => $mauvaise_reponse
                                     )
                                 );
 

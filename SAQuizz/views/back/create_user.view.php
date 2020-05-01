@@ -41,7 +41,7 @@ ob_start();
                 </div>
                 <div id="container-accueil-corps">
 
-                    <h1 class="title-create-user">s'inscrire</h1>
+                    <h1 class="title-create-user">Ajouter un admin</h1>
                     <p class="comment-create-user">Pour proposer des quizz</p>
                     <hr class="hr-create-user">
 
@@ -86,17 +86,17 @@ ob_start();
             <script>
                 //Récupération du container-accueil
                 let containerAccueil = document.getElementById("container-accueil-corps");
-                containerAccueil.style.height = "640px";
-                containerAccueil.style.marginBottom = "12px";
+                //containerAccueil.style.height = "640px";
+                containerAccueil.style.overflow = "overlay";
                 //Récupération du ovelray
                 let overlay = document.getElementById("color-overlay");
                 overlay.style.height = "125%";
                 //Récupération de la div
                 let divCorps = document.getElementById("container-accueil-corps");
                 divCorps.style.position  = "relative";
-                divCorps.style.height = "590px";
+                //divCorps.style.height = "590px";
                 let containerCreateUser = document.getElementById("container-create-user");
-                containerCreateUser.style.height = "720px";
+                //containerCreateUser.style.height = "720px";
 
                 var input_file = document.getElementById("choice-file");
                 var button_file = document.getElementById("choice-file-button");

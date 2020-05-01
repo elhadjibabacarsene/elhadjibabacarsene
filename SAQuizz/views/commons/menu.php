@@ -1,7 +1,12 @@
 <ul id="menu-admin">
+    <div id="ic-0" categorie="dashboard">
+        <div class="ic-color"></div>
+        <li><a class="activated" href="<?=URL?>dashboard">Tableau de bord</a></li>
+        <img class="ic-img ic-dashboard" src="<?=URL?>public/source/images/icônes/ic-dashboard.png">
+    </div>
     <div id="ic-1" categorie="list">
         <div class="ic-color"></div>
-        <li><a class="activated" href="accueil">Liste Questions</a></li>
+        <li><a href="accueil">Liste Questions</a></li>
         <img class="ic-img" src="<?=URL?>public/source/images/icônes/ic-liste.png">
     </div>
     <div id="ic-2" categorie="create">

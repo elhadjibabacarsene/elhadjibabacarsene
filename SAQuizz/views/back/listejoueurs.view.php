@@ -87,7 +87,7 @@ ob_start();
                 <!-- ACCUEIL-NEXT-QUESTION-->
                 <div class="accueil-question-next">
                     <form method="POST">
-                        <input type="submit" name="submit-question-next" value="Suivant" id="submit-question-next">
+                        <input type="submit" name="submit-question-next" value="Suivant" class="button-next">
                     </form>
                 </div>
 

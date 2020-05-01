@@ -15,7 +15,7 @@
     "prenom": "Fatou",
     "nom": "Sene",
     "avatar": "public\/source\/images\/avatar\/slide-1-tn.jpeg",
-    "score": 0
+    "score": 19
   },
   "user3": {
     "login": "falla",
@@ -24,7 +24,7 @@
     "prenom": "Mamy",
     "nom": "fall",
     "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
-    "score": 0
+    "score": 17
   },
   "user4": {
     "login": "assane",
@@ -41,6 +41,33 @@
     "prenom": "Mor",
     "nom": "Ndiaye",
     "avatar": "public\/source\/images\/avatar\/Odin5.jpg",
-    "score": 0
+    "score": 16
+  },
+  "user6": {
+    "login": "psdiouf",
+    "password": "12345678",
+    "acces": "joueur",
+    "prenom": "Senghane",
+    "nom": "Diouf",
+    "avatar": "public\/source\/images\/avatar\/WhatsApp Image 2020-02-18 at 13.44.35 (1).jpeg",
+    "score": 20
+  },
+  "user7": {
+    "login": "dijasow",
+    "password": "12345678",
+    "acces": "joueur",
+    "prenom": "Khadeja",
+    "nom": "Sow",
+    "avatar": "public\/source\/images\/avatar\/Odin7.jpg",
+    "score": 2
+  },
+  "user8": {
+    "login": "ebs",
+    "password": "12345678",
+    "acces": "admin",
+    "prenom": "Elhadji",
+    "nom": "S\u00e9ne",
+    "avatar": "public\/source\/images\/avatar\/WhatsApp Image 2020-02-18 at 13.01.45 (1).jpeg"
   }
 }
+

@@ -274,7 +274,7 @@ body{
     list-style: none;
     padding: 12px;
 }
-#ic-1,#ic-2,#ic-3,#ic-4{
+#ic-0,#ic-1,#ic-2,#ic-3,#ic-4{
     position: relative;
 }
 .ic-color{
@@ -287,6 +287,12 @@ body{
     top: 14px;
     left: 88%;
 }
+.ic-dashboard
+{
+    width: 22px;
+    height:22px;
+}
+
 .active{
     background-color: #f8f3f1;
 }
@@ -308,13 +314,15 @@ body{
     box-shadow: 0 0px 6px 0px rgba(19, 35, 47, 0.3);
 }
 .accueil-nbre-question{
-    height: 10%;
+    padding: 10px;
+    height: 5%;
     color: #8d8170;
     text-align: center;
-
 }
-.accueil-nbre-question  form{
-    padding-top: 10px;
+.titre-lbl{
+    color: #8b8b8b;
+    font-weight: bold;
+    font-size: 20px;
     font-family: "HelveticaNeue-Light";
 }
 .accueil-nbre-question form input[type="submit"]{
@@ -448,7 +456,7 @@ body{
     height: 20px;
     width: 100px;
     border:0px;
-    font-size: 10px;
+    font-size: 8px;
     background-color: #52bfd1;
     cursor: pointer;
     color: white;
@@ -470,11 +478,11 @@ body{
     width: 120px;
     border:0px;
     color:white;
-    font-size: 14px;
+    font-size: 13px;
     background-color: #52bfd1;
     border-radius: 2px;
     cursor: pointer;
-    margin: 15px 0 0 70px;
+    margin: 15px 0 8px 70px;
     font-weight: bold;
     display: block;
 }
@@ -794,4 +802,123 @@ body{
     box-sizing: border-box;
 }
 
+/*** PAGE DASHBOARD ***/
+#container-dashboard-corps
+{
+    width: 74%;
+    height: 465px;
+    margin-left: 10px;
+    overflow: scroll;
+}
+#dashboard-top
+{
+    display: flex;
+    width: 100%;
+    height: 20%;
+    justify-content: space-between;
+    margin-top: 12px;
+}
+#dashboard-top-left
+{
+    width: 35%;
+    height: 100%;
+    margin-left: 12px;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+}
+#dashboard-top-left img
+{
+    width: 45px;
+    margin: 16px 0px 0px 10px;
+    position: absolute;
+
+}
+#dashboard-top-left p
+ {
+    top: 14px;
+     position: absolute;
+     left:70%;
+     text-align: center;
+     font-size: 10px;
+    color: #736c72;
+    font-family: "Open Sans";
+ }
+#dashboard-top-left p span
+{
+    font-size: 16px;
+    color: #44a3d1;
+}
+#dashboard-top-right
+{
+    width: 35%;
+    height: 100%;
+    margin-right: 12px;
+    background-color: white;
+    position: relative;
+    border-radius: 5px;
+}
+#dashboard-top-right img
+{
+    width: 45px;
+    margin: 16px 0px 0px 10px;
+    position: absolute;
+
+}
+#dashboard-top-right p
+{
+    top: 14px;
+    position: absolute;
+    left:70%;
+    text-align: center;
+    font-size: 10px;
+    color: #736c72;
+    font-family: "Open Sans";
+}
+#dashboard-top-right p span
+{
+    font-size: 16px;
+    color: #44a3d1;
+}
+#dashboard-center
+{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 100%;
+    height: 55%;
+    justify-content: space-between;
+    margin-top: 30px;
+
+}
+#dashboard-center-left
+{
+    width:55%;
+    height:109%;
+    background-color: white;
+    margin-left: 12px;
+}
+#dashboard-center-right
+{
+    width:40%;
+    height:100%;
+    background-color: white;
+    margin-right: 12px;
+}
+#dashboard-center-right p
+{
+    font-size: 10px;
+    color:#736c72;
+    background-color: white;
+    text-align: center;
+    margin-top: 0px;
+    padding-top: 2px;
+    height: 20px;
+}
+
+#graph1
+{
+    margin:20px 0px 0px 12px;
+    width: 100%;
+    height: 100%;
+}
 

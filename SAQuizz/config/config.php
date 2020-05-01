@@ -1,5 +1,6 @@
 <?php
 
+//set_time_limit ( 0 );
 /**
  * FONCTION QUI PERMET DE TRANSFORMER UN FILES JSON EN TABLEAU PHP
  * @param $nameFileJson string nom du fichier JSON
@@ -93,6 +94,21 @@
         }
         return $indicesJoueurs;
     }
+
+/**
+ * @param $jsonFileDecode array le fichier JSON décodé
+ * @return int le nombre de joueur
+ */
+function indicesAdmins($jsonFileDecode){
+    $indiceAdmins = array();
+    $taille = countJson($jsonFileDecode);
+    for($i=1;$i<=$taille;$i++){
+        if($jsonFileDecode['user'.$i]['acces'] === "admin"){
+            $indicesAdmins[] = $i;
+        }
+    }
+    return $indicesAdmins;
+}
 
 
 
@@ -201,6 +217,62 @@ function pagination($tab){
             $st=true;
         }
         return $st;
+    }
+
+/**
+ * @param $json_question_decode array le fichier des questions décodés
+ * @return int le nombre de question dans le fichier json question
+ */
+    function nbreQuestion($json_question_decode)
+    {
+        $nbre = 0;
+        foreach ($json_question_decode as $question)
+        {
+            $nbre++;
+        }
+        return $nbre;
+    }
+
+/**
+ * @return array l'id et le score des 5 meilleurs joueurs
+ */
+    function top5score()
+    {
+        //On inintialise la table qui va contenir l'id du joueur et son score
+        $joueur_id_score = array();
+        $top_5 = array();
+
+        //On décode le fichier d'utilisateur JSON
+        $json_user_decode = transformFileJson("utilisateur.json");
+        //On récupère les id des joueurs dans un tableau
+        $joueurs_table = indicesJoueurs($json_user_decode);
+        //On récupère la nombre de joueur
+        $nbre_joueur = count($joueurs_table);
+
+        foreach ($joueurs_table as $key=>$id)
+        {
+            //On récupère l'id et les scores de chaque joueurs
+            $joueur_id_score [] = array('id'=> $id,'score'=> $json_user_decode['user'.$id]['score']);
+        }
+        //On fait un trie décroissant
+        $tmp=0;
+        for($i=0;$i<count($joueur_id_score);$i++)
+        {
+            for($j=$i+1;$j<count($joueur_id_score);$j++)
+            {
+                if($joueur_id_score[$i]["score"]<=$joueur_id_score[$j]["score"])
+                {
+                    $tmp = $joueur_id_score[$j];
+                    $joueur_id_score[$j] = $joueur_id_score[$i];
+                    $joueur_id_score[$i] = $tmp;
+                }
+            }
+        }
+        for($i=0;$i<5;$i++)
+        {
+            $top_5 [] = $joueur_id_score[$i];
+        }
+        return $top_5;
     }
 
 //CONSTANTE QUI NOUS PERMET D'ACCEDER A L'URL SOURCE

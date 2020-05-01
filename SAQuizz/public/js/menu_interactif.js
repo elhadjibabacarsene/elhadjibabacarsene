@@ -26,6 +26,10 @@ function activeMenu(idDivItem,nomIcone){
 
     switch (id_page)
     {
+        case "dashbord":
+            activeMenu("ic-0", "ic-dashboard-active.png");
+        break;
+
         case "container-accueil" :
             activeMenu("ic-1","ic-liste-active.png");
          break;
@@ -41,6 +45,7 @@ function activeMenu(idDivItem,nomIcone){
         case "create-question":
             activeMenu("ic-4", "ic-ajout-active.png");
         break;
+
     }
 
 

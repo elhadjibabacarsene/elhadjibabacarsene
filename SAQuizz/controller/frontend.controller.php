@@ -65,7 +65,7 @@ function getPageConnexion(){
                             $_SESSION['prenom'] = $json_user_file_decode['user'.$idLogin]['prenom'];
                             $_SESSION['nom'] = $json_user_file_decode['user'.$idLogin]['nom'];
                             $_SESSION['avatar'] = $json_user_file_decode['user'.$idLogin]['avatar'];
-                            header("location:accueil");
+                            header("location:dashboard");
                         }
                         if($json_user_file_decode['user'.$idLogin]['acces'] === "joueur"){
                             $_SESSION['idLogin'] = $idLogin;

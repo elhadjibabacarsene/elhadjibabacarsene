@@ -3,6 +3,89 @@
 require_once 'config/config.php';
 
 
+//set_time_limit ( 0 );
+
+
+function getPageDashboard()
+{
+
+    //titre de la page
+    $title = "Tableau de board";
+
+
+    if(isset($_SESSION) && !empty($_SESSION))
+    {
+        //On contrôle l'acces admin
+        if($_SESSION['acces'] !== "admin")
+        {
+            //Affichage message erreur et redirection si l'utilisateur n'est pas un admin
+            afficheMessageAlert("Vous n'avez pas les autorisations pour accéder à cette page");
+            echo '<script> location.replace("jeux"); </script>';
+        }
+
+        //Gestion de la déconnexion
+        if(isset($_POST['deconnexion']) && $_POST['deconnexion'] === "Déconnexion")
+        {
+            session_destroy();
+            header("location:login");
+            echo '<script> location.replace("login"); </script>';
+        }
+
+            //On calcul le nombre d'admin
+            $json_user_decode = transformFileJson("utilisateur.json");
+            $table_admins = indicesAdmins($json_user_decode);
+            $nbre_admin = count($table_admins);
+            //On calcul le nombre d'utilisateur
+            $json_user_decode = transformFileJson("utilisateur.json");
+            $table_joueurs = indicesJoueurs($json_user_decode);
+            $nbre_joueur = count($table_joueurs);
+
+            //On récupère les scores des joueurs
+            $logins = $scores = array();
+            $top_5_score = top5score();
+
+            for($i=0;$i<count($top_5_score);$i++)
+            {
+                $id = $top_5_score[$i]['id'];
+                $logins [] = $json_user_decode['user'.$id]['login'];
+                $scores [] = $top_5_score[$i]['score'];
+            }
+
+            //On récupère les questions par type
+            $json_question_decode = transformFileJson("question.json");
+            $nbre_questions = nbreQuestion($json_question_decode);
+            //On range les questions par type
+            $questions_text = $questions_simple = $questions_multiple = 0;
+            for($i=1;$i<=$nbre_questions;$i++)
+            {
+                switch ($json_question_decode['question'.$i]["type_reponse"])
+                {
+                    case "texte" :
+                        $questions_text++;
+                    break;
+
+                    case "choixSimple" :
+                        $questions_simple++;
+                    break;
+
+                    case "choixMultiple" :
+                        $questions_multiple++;
+                    break;
+                }
+            }
+
+            //On encode le nombre par type de question dasn un file JSON
+            $nbre_type_question_json [] = $questions_text;
+            $nbre_type_question_json [] = $questions_simple;
+            $nbre_type_question_json [] = $questions_multiple;
+    }else{
+        echo '<script> location.replace("login"); </script>';
+    }
+    require_once 'views/back/dashbord.view.php';
+}
+
+
+
 
 /**
  * FONCTION QUI NOUS PERMET D'ACCEDER A LA PAGE D'ACCUEIL (admin)

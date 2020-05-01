@@ -12,7 +12,7 @@ function getPageConnexion(){
     $title = "Se Connecter";
     if(isset($_SESSION) && !empty($_SESSION)){
         if($_SESSION['acces'] === "admin"){
-            header("location:accueil");
+            header("location:dashboard");
         }
         if($_SESSION['acces'] === "joueur"){
             header("location:jeux");

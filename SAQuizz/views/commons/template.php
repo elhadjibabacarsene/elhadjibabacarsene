@@ -42,6 +42,7 @@
     <script text="type/javascript" src="<?URL?>public/js/menu_interactif.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/affichageScore.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/validationForm.js<?php echo "?".rand();?>"></script>
+    <script text="type/javascript" src="<?URL?>public/js/config.js<?php echo "?".rand();?>"></script>
     <!-- ChartJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script text="type/javascript" src="<?URL?>public/js/charts.js<?php echo "?".rand();?>"></script>

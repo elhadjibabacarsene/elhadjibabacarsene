@@ -63,12 +63,13 @@ ob_start();
                                     echo'</tr>';
                                       for($i=$indiceDepart;$i<$indiceFin;$i++)
                                       {
+                                          $id = $nbre_joueur_score_id[$i]['id'];
                                           if($nbreJoueurs>$i)
                                           {
                                               echo '<tr>';
-                                              echo '<td class="td-simple">' . $json_user_file_decode['user' . $joueurs[$i]]['nom'] . '</td>';
-                                              echo '<td class="td-simple">' . $json_user_file_decode['user' . $joueurs[$i]]['prenom'] . '</td>';
-                                              echo '<td class="td-simple">' . $json_user_file_decode['user' . $joueurs[$i]]['score'] . '<span id="pts"> pts</span></td>';
+                                              echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['nom'] . '</td>';
+                                              echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['prenom'] . '</td>';
+                                              echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['score'] . '<span id="pts"> pts</span></td>';
                                               echo '</tr>';
                                           }
 
@@ -86,10 +87,13 @@ ob_start();
 
                 <!-- ACCUEIL-NEXT-QUESTION-->
                 <div class="accueil-question-next">
-                    <form method="POST">
-                        <input type="submit" name="submit-question-next" value="Suivant" class="button-next">
-                    </form>
-                </div>
+                <form method="POST">
+                    <input type="submit" name="submit-question-next" value="Suivant" class="button-next">
+                </form>
+                <form method="POST">
+                    <input type="submit" name="submit-question-previous" value="Précédent" class="button-previous">
+                </form>
+            </div>
 
             </div>
         </div>

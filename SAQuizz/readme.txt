@@ -1,4 +1,4 @@
-/**** SaQuizz Version 0.3.5 ****/
+/**** SaQuizz Version 0.3.6 ****/
 
 
 /* INFORMATION DE CONNEXION */
@@ -16,7 +16,9 @@ Password: joueur
 
 Nouvelles fonctionnalités:
 
-- Système de Dashboard pour l'admin qui lui permettra de visualiser de manière dynamique le nombre d'admin et de joueurs enregistrés ainsi que les graphiques des 5 meilleurs performances.
+- Gestion dynamique de la liste des joueurs en fonction des scores (ordre décroissant)
+- Gestion dynamique du TOP 5
+- Message de confirmation avant la déconnexion de l'utilisateur
 
 
 

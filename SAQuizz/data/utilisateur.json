@@ -26,14 +26,6 @@
     "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
     "score": 11
   },
-  "user4": {
-    "login": "assane",
-    "password": "12345678",
-    "acces": "admin",
-    "prenom": "Assane",
-    "nom": "Nging",
-    "avatar": "public\/source\/images\/avatar\/fonzie.jpg"
-  },
   "user5": {
     "login": "morndiaye",
     "password": "morndiaye",
@@ -60,14 +52,6 @@
     "nom": "Sow",
     "avatar": "public\/source\/images\/avatar\/Odin7.jpg",
     "score": 2
-  },
-  "user8": {
-    "login": "ebs",
-    "password": "12345678",
-    "acces": "admin",
-    "prenom": "Elhadji",
-    "nom": "S\u00e9ne",
-    "avatar": "public\/source\/images\/avatar\/WhatsApp Image 2020-02-18 at 13.01.45 (1).jpeg"
   }
 }
 

@@ -311,8 +311,8 @@ function getPageListeJoueurs(){
             //On compte le nombre d'utilisateur
             $taille = countJson($json_user_file_decode);
             //On récupère le nombre de joueur
-            $nbreJoueurs = count(indicesJoueurs($json_user_file_decode));
-            $joueurs = indicesJoueurs($json_user_file_decode);
+            $nbre_joueur_score_id = allGamerByScore();
+            $nbreJoueurs = count($nbre_joueur_score_id);
             //NOMBRE DE VALEUR PAR PAGE
             $nbreParPage = 15;
             //NOMBRE DE PAGES
@@ -327,8 +327,19 @@ function getPageListeJoueurs(){
             $page = (int)$page;
             if(isset($_POST['submit-question-next']))
             {
-                header_remove();
+                //echo '<script> location.replace("location:liste-joueurs&indice='.((int)$page+1).'")</script>';
+                //header_remove();
+                //echo '<script> location.replace("liste-joueurs"); </script>';
                 header("location:liste-joueurs&indice=".((int)$page+1));
+            }
+            if(isset($_POST['submit-question-previous']))
+            {
+                if($page>1)
+                {
+                    header_remove();
+                    header("location:liste-joueurs&indice=".((int)$page-1));
+                }
+
             }
         }else{
             //Affichage message erreur et redirection si l'utilisateur n'est pas un admin

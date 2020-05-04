@@ -24,7 +24,16 @@
     "prenom": "Mamy",
     "nom": "fall",
     "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
-    "score": 11
+    "score": 17
+  },
+  "user4": {
+    "login": "maty",
+    "password": "azertyuiop",
+    "acces": "joueur",
+    "prenom": "Maty",
+    "nom": "Sene",
+    "avatar": "public\/source\/images\/avatar\/img-bg.jpg",
+    "score": 12
   },
   "user5": {
     "login": "morndiaye",
@@ -33,7 +42,7 @@
     "prenom": "Mor",
     "nom": "Ndiaye",
     "avatar": "public\/source\/images\/avatar\/Odin5.jpg",
-    "score": 16
+    "score": 18
   },
   "user6": {
     "login": "psdiouf",
@@ -51,7 +60,7 @@
     "prenom": "Khadeja",
     "nom": "Sow",
     "avatar": "public\/source\/images\/avatar\/Odin7.jpg",
-    "score": 2
+    "score": 19
   }
 }
 

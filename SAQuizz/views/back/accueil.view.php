@@ -42,8 +42,8 @@ ob_start();
                 <div class="accueil-nbre-question">
                     <form method="POST">
                         <label>Nbre de questions/jeux</label>
-                        <input type="text" name="nbre-question" value="<?=(isset($_POST['nbre-question'])) ? $nbre_question : "" ?>">
-                        <input type="submit" name="submit-nbre-question" value="OK">
+                        <input type="text" name="nbre-question" id="nbre-question" value="<?=(isset($_POST['nbre-question'])) ? $nbre_question : $_SESSION['nbre_question'] ?>">
+                        <input type="submit" name="submit-nbre-question"  id="submit-nbre-question" value="OK">
                     </form>
                 </div>
 

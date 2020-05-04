@@ -43,7 +43,6 @@ function getPageDashboard()
             //On récupère les scores des joueurs
             $logins = $scores = array();
             $top_5_score = top5score();
-
             for($i=0;$i<count($top_5_score);$i++)
             {
                 $id = $top_5_score[$i]['id'];
@@ -110,17 +109,42 @@ function getPageAccueil()
             echo '<script> location.replace("login"); </script>';
         }
 
+
+        //On decode le fichier JSON CONFIG
+        $json_config_decode = transformFileJson("config.json");
+        //On initialise la valeur de nbre de question
+        $_SESSION['nbre_question'] = $json_config_decode['nombreQuestionParJeux']['value'];
+
             //Si le boutton nombre de questions est validés
             if(isset($_POST['submit-nbre-question']) && !empty($_POST['submit-nbre-question']))
             {
                 $isSucces=true;
                 $nbre_question = $_POST['nbre-question'];
 
-                if(!isIntValue($nbre_question))
+               if($nbre_question<5)
                 {
                     $isSucces = false;
-                    afficheMessageAlert("Le nombre de question doit être en entier");
+                    afficheMessageAlert("Le nombre de question doit être supérieur ou égal à 5");
+                    $nbre_question =  $_SESSION['nbre_question'];
                 }
+
+                    if($isSucces)
+                    {
+                        //On récupère les données du file json
+                        $array_data = $json_config_decode;
+                        //On modifie la valeur de data
+                        $data = array("value"=>$nbre_question);
+                        //On modifie la table nbreQuestionParJeux
+                        $array_data['nombreQuestionParJeux']= $data;
+                        //On encode la nouvelle table modifiée
+                        $finally_array = json_encode($array_data);
+                        $databaseURL = "data/config.json";
+                        //On injecte la nouvelle table modifiée dans le fichier
+                        if(file_put_contents($databaseURL,$finally_array)){
+                            afficheMessageAlert("Le nombre de question par jeux a été modifié !");
+                            echo '<script> location.replace("accueil"); </script>';
+                        }
+                    }
             }
 
         //On decode le fichier JSON QUESTION

@@ -16,10 +16,8 @@ Password: joueur
 
 Nouvelles fonctionnalités:
 
-- Gestion dynamique de la liste des joueurs en fonction des scores (ordre décroissant)
-- Gestion dynamique du TOP 5
-- Message de confirmation avant la déconnexion de l'utilisateur
-
+- Gestion dynamique de nombre de questions par jeux (admin)
+ 
 
 
 

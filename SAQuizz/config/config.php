@@ -259,7 +259,7 @@ function pagination($tab){
      //var_dump(count($joueur_id_score));
      for($i=0;$i<count($joueur_id_score);$i++)
      {
-         for($j=$i+1;$j<count($joueur_id_score);$j++)
+         for($j=$i;$j<count($joueur_id_score);$j++)
          {
              if($joueur_id_score[$i]["score"]<=$joueur_id_score[$j]["score"])
              {

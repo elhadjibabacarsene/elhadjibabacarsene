@@ -92,7 +92,7 @@ function multiple()
     checkbox.value = id_row;
     //On crée l'icone delete de la réponse
     let img = document.createElement("img");
-    img.src = "public/source/images/icônes/ic-supprimer.png";
+    img.src = "public/source/images/icones/ic-supprimer.png";
     img.id = "ic-delete";
     img.setAttribute("reponse",id_row);
 
@@ -130,7 +130,7 @@ function simple()
     radio.value = id_row;
     //On crée l'icone delete de la réponse
     let img = document.createElement("img");
-    img.src = "public/source/images/icônes/ic-supprimer.png";
+    img.src = "public/source/images/icones/ic-supprimer.png";
     img.id = "ic-delete";
     img.setAttribute("reponse", id_row);
 

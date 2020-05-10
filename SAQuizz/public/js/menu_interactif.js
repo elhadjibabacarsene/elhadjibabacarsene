@@ -18,7 +18,7 @@ function activeMenu(idDivItem,nomIcone){
     li[0].classList.add("active");
     //On récupère l'icône
     var icone = div_item.getElementsByTagName("img");
-    icone[0].src = "public/source/images/icônes/" + nomIcone;
+    icone[0].src = "./public/source/images/icones/" + nomIcone;
 }
 
 

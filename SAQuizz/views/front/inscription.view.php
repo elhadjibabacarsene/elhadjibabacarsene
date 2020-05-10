@@ -8,7 +8,6 @@ ob_start();
 
 
 
-
     <!-- CORPS -->
     <div class="container-accueil-corps">
 
@@ -48,7 +47,7 @@ ob_start();
             </form>
 
             <!-- VISUALISATION DE L'AVATAR -->
-            <img src="<?=(!empty($image)) ? $imagePath : YOURTOF?>" class="avatar-create-user-img" id="avatar-create-user-img">
+            <img src="<?=YOURTOF?>" class="avatar-create-user-img" id="avatar-create-user-img">
             <label class="lbl-avatar-admin" id="lbl-avatar-admin">Avatar admin</label>
 
         </div>
@@ -63,15 +62,16 @@ ob_start();
     containerAccueil.style.marginBottom = "12px";
     containerAccueil.style.marginTop = "35px";
     containerAccueil.style.marginLeft = "200px";
-    //Récupération du ovelray
+    //Récupération du overlay
     let overlay = document.getElementById("color-overlay");
-    overlay.style.height = "125%";
+    overlay.style.height = "105%";
     //Récupération de la div
     let divCorps = document.getElementById("container-accueil-corps");
     divCorps.style.position  = "relative";
     divCorps.style.height = "590px";
     let containerCreateUser = document.getElementById("container-create-user");
-    containerCreateUser.style.height = "720px";
+    containerCreateUser.style.top="90px";
+    containerCreateUser.style.height = "0px";
 
     var input_file = document.getElementById("choice-file");
     var button_file = document.getElementById("choice-file-button");
@@ -96,6 +96,9 @@ ob_start();
     }
 
     $("#choice-file").change(function() {
+        readURL(this);
+    });
+    $("#avatar-create-user-img").change(function() {
         readURL(this);
     });
 

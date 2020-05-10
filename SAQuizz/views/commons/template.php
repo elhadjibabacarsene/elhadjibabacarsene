@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
     <title><?=$title?></title>
 </head>
-<body>
+<body id="startConfetti">
     <div id="color-overlay"></div>
     <!-- DEBUT HEADER -->
             <div class="header">
@@ -47,6 +47,8 @@
     <!-- ChartJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
     <script text="type/javascript" src="<?URL?>public/js/charts.js<?php echo "?".rand();?>"></script>
+
+
     <!-- CONFIG JS -->
 </body>
 </html>

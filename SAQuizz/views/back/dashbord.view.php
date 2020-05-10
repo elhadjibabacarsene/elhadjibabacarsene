@@ -9,7 +9,7 @@ ob_start();
 
         <!-- EN TETE -->
         <div class="container-accueil-head">
-            <div class="head-left">
+            <div class="head-left" id="head-left-hidden">
                 <img src="<?=URL.$_SESSION['avatar']?>" alt="<?=$_SESSION['avatar']?>">
                 <p><?=$_SESSION['prenom']. ' '.$_SESSION['nom']?></p>
             </div>
@@ -53,11 +53,11 @@ ob_start();
                 <div id="dashboard-top">
                     <div id="dashboard-top-left">
                         <p><span><?=(isset($nbre_admin) ? $nbre_admin : "NULL")?> admins</span><br>enregistrés</p>
-                        <img src="public/source/images/icônes/avat-admin.png">
+                        <img src="<?=URL?>public/source/images/icones/avat-admin.png">
                     </div>
                     <div id="dashboard-top-right">
                         <p><span><?=(isset($nbre_joueur) ? $nbre_joueur : "NULL")?> Joueurs</span><br>enregistrés</p>
-                        <img src="public/source/images/icônes/avat-techno.png">
+                        <img src="<?=URL?>public/source/images/icones/avat-techno.png">
                     </div>
                 </div>
 
@@ -171,4 +171,7 @@ require_once 'views/commons/template.php';
         var graph2 = new Chart(ctx,config);
     }
     chartTypeQuestion();
+
+
+
 </script>

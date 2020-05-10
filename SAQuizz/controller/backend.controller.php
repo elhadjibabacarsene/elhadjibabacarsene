@@ -99,7 +99,6 @@ function getPageAccueil()
         {
             //Affichage message erreur et redirection si l'utilisateur n'est pas un admin
             afficheMessageAlert("Vous n'avez pas les autorisations pour accéder à cette page");
-            echo '<script> location.replace("jeux"); </script>';
         }
         //Gestion de la déconnexion
         if(isset($_POST['deconnexion']) && $_POST['deconnexion'] === "Déconnexion")
@@ -112,6 +111,12 @@ function getPageAccueil()
 
         //On decode le fichier JSON CONFIG
         $json_config_decode = transformFileJson("config.json");
+
+        //On decode le fichier JSON QUESTION
+        $json_question_decode = transformFileJson("question.json");
+        //On compte
+        $taille_question = countJson($json_question_decode);
+
         //On initialise la valeur de nbre de question
         $_SESSION['nbre_question'] = $json_config_decode['nombreQuestionParJeux']['value'];
 
@@ -124,9 +129,15 @@ function getPageAccueil()
                if($nbre_question<5)
                 {
                     $isSucces = false;
-                    afficheMessageAlert("Le nombre de question doit être supérieur ou égal à 5");
+                    afficheMessageAlert("ERREUR ! Le nombre de question par jeux doit être supérieur ou égal à 5.");
                     $nbre_question =  $_SESSION['nbre_question'];
                 }
+               if($nbre_question>$taille_question)
+               {
+                   $isSucces = false;
+                   afficheMessageAlert("ERREUR ! Le nombre de question par jeux ne peut pas être supérieur aux nombres des questions enregistrés.");
+                   $nbre_question =  $_SESSION['nbre_question'];
+               }
 
                     if($isSucces)
                     {
@@ -147,8 +158,7 @@ function getPageAccueil()
                     }
             }
 
-        //On decode le fichier JSON QUESTION
-        $json_question_decode = transformFileJson("question.json");
+
         //On compte le nombre de question dans notre fichier JSON
         $nbre_question_in_json = countJson($json_question_decode);
         //var_dump($json_question_decode);
@@ -228,7 +238,6 @@ function getPageCreateUser(){
                 $isUploadSuccess    = false;
                 $isSucces           = true;
 
-
                     if(empty($image))
                     {
 
@@ -253,14 +262,14 @@ function getPageCreateUser(){
                             $imageError = "Le fichier ne doit pas depasser les 500KB";
                             $isUploadSuccess = false;
                         }
-                        if($isUploadSuccess)
+                        /*if($isUploadSuccess)
                         {
                             if(!move_uploaded_file($_FILES["choice-file"]["tmp_name"], $imagePath))
                             {
                                 $imageError = "Il y a eu une erreur lors de l'upload";
                                 $isUploadSuccess = false;
                             }
-                        }
+                        }*/
                     }
             }
 
@@ -351,9 +360,7 @@ function getPageListeJoueurs(){
             $page = (int)$page;
             if(isset($_POST['submit-question-next']))
             {
-                //echo '<script> location.replace("location:liste-joueurs&indice='.((int)$page+1).'")</script>';
-                //header_remove();
-                //echo '<script> location.replace("liste-joueurs"); </script>';
+
                 header("location:liste-joueurs&indice=".((int)$page+1));
             }
             if(isset($_POST['submit-question-previous']))
@@ -436,7 +443,7 @@ function getPageCreateQuestion()
                                 "question" => $question,
                                 "nbre_point" => $nbre_point,
                                 "type_reponse" => $type_reponse,
-                                "reponses" => $reponse
+                                "reponses" => array('reponse1'=>$reponse)
                             );
 
                             $array_data['question' . $newIdQuestion] = $data;
@@ -458,9 +465,15 @@ function getPageCreateQuestion()
                                     //Si un champ radio a été coché
                                     if (isset($_POST['radio-reponse']) && !empty($_POST['radio-reponse'])) {
                                         if ('reponse' . $i === $_POST['radio-reponse']) {
-                                            $bonnes_reponse [] = $_POST['reponse' . $i];
+                                            $reponses['reponse'.($i+1)] = array('libelle'=>$_POST['reponse'.$i],
+                                                'statut'=>true
+                                                );
+
+
                                         } else {
-                                            $mauvaise_reponse [] = $_POST['reponse' . $i];
+                                            $reponses['reponse'.($i+1)] = array('libelle'=>$_POST['reponse'.$i],
+                                                'statut'=>false
+                                            );
                                         }
                                     }else{
                                         //False si aucun champ radio n'est coché
@@ -479,12 +492,11 @@ function getPageCreateQuestion()
                                 $data = array(
                                     "question" => $question,
                                     "nbre_point" => $nbre_point,
-                                    "type_reponse" => $type_reponse,
-                                    "reponses" => array(
-                                        "bonnes_reponses" => $bonnes_reponse,
-                                        "mauvaises_reponses" => $mauvaise_reponse
-                                    )
+                                    "type_reponse" => $type_reponse
                                 );
+
+                                //On récupère les réponses dans le tableau de données de la question
+                                $data['reponses'] = $reponses;
 
                                 $array_data['question' . $newIdQuestion] = $data;
                                 $finally_array = json_encode($array_data);
@@ -522,9 +534,13 @@ function getPageCreateQuestion()
                                         }
                                         if ($c === true)
                                         {
-                                            $bonnes_reponse [] = $_POST['reponse'.$i];
+                                            $reponses['reponse'.($i+1)] = array('libelle'=>$_POST['reponse'.$i],
+                                                'statut'=>true
+                                            );
                                         } else {
-                                            $mauvaise_reponse [] = $_POST['reponse'.$i];
+                                            $reponses['reponse'.($i+1)] = array('libelle'=>$_POST['reponse'.$i],
+                                                'statut'=>false
+                                            );
                                         }
                                     }else{
                                         //False si aucun champ radio n'est coché
@@ -544,11 +560,10 @@ function getPageCreateQuestion()
                                     "question" => $question,
                                     "nbre_point" => $nbre_point,
                                     "type_reponse" => $type_reponse,
-                                    "reponses" => array(
-                                        "bonnes_reponses" => $bonnes_reponse,
-                                        "mauvaises_reponses" => $mauvaise_reponse
-                                    )
                                 );
+
+                                //On récupère les réponses dans le tableau de données de la question
+                                $data['reponses'] = $reponses;
 
                                 $array_data['question' . $newIdQuestion] = $data;
                                 $finally_array = json_encode($array_data);

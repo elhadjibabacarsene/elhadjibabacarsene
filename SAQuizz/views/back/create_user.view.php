@@ -4,9 +4,10 @@ ob_start();
 
 
 ?>
+
     <div id="container-create-user">
 
-
+        <div id="admin-id"></div>
         <!-- EN TETE -->
         <div class="container-accueil-head">
             <div class="head-left" id="head-left-hidden">
@@ -75,7 +76,7 @@ ob_start();
                     </form>
 
                     <!-- VISUALISATION DE L'AVATAR -->
-                    <img src="<?=(!empty($image)) ? $imagePath : YOURTOF?>" class="avatar-create-user-img" id="avatar-create-user-img">
+                    <img src="<?=YOURTOF?>" class="avatar-create-user-img" id="avatar-create-user-img">
                     <label class="lbl-avatar-admin" id="lbl-avatar-admin">Avatar admin</label>
 
                 </div>

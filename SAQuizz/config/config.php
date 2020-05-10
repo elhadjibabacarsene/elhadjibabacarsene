@@ -1,5 +1,8 @@
 <?php
 
+//CONSTANTE QUI NOUS PERMET D'ACCEDER A L'URL SOURCE
+define("URL",str_replace("index.php","", (isset($_SERVER["HTTPS"])? "https" : "http"). "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
+
 //set_time_limit ( 0 );
 /**
  * FONCTION QUI PERMET DE TRANSFORMER UN FILES JSON EN TABLEAU PHP
@@ -288,7 +291,19 @@ function pagination($tab){
         return $top_5;
     }
 
+function shuffle_extra ($array) {
+    // vérifie si c'est un tableau
+    if (!is_array($array)) {
+        return array();
+    }
+
+    // mélange les clés du tableau
+    shuffle($array);
+
+    // retourne le résultat
+    return $array;
+}
+
 //CONSTANTE QUI NOUS PERMET D'ACCEDER A L'URL SOURCE
-define("URL",str_replace("index.php","", (isset($_SERVER["HTTPS"])? "https" : "http"). "://$_SERVER[HTTP_HOST]$_SERVER[PHP_SELF]"));
 
 define("YOURTOF", "public/source/images/votre-photo-ici.jpg");

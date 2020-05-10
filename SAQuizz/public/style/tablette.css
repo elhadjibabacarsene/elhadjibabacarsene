@@ -143,6 +143,7 @@ body{
     height: 50px;
 }
 
+
 #form-create-user input[type="text"],input[type="password"]{
     display: block;
     width: 300px;
@@ -171,4 +172,70 @@ body{
 #list-joueurs td
 {
     padding-right: 80px;
+}
+
+#dashboard-top-left p,#dashboard-top-right p {
+    left: 52%;
+}
+
+.container-accueil-corps-menu .top p{
+    font-size: 16px;
+    top: 20px;
+    left: 124px;
+}
+.container-accueil-corps-menu .top .nom {
+    font-size: 16px;
+    left: 139px;
+}
+.accueil-nbre-question form input[type="text"] {
+    border: 1px solid #8d8170;
+    margin-left: -2px;
+}
+#form-create-user input[type="text"],input[type="password"]
+{
+    border: 1px solid #8d8170;
+}
+#color-overlay
+{
+    height: 127%;
+}
+.avatar-create-user-img {
+    top: 174px;
+    left: 404px;
+}
+#recap-score {
+    margin: 20px 0px 0px 97px;
+}
+#div-score {
+    width: 147%;
+}
+#div-best-score{
+    width: 63%;
+}
+.rep-quest-text {
+    width: 417px;
+    margin: 80px 0px 0px -75px;
+}
+#points {
+    width: 13%;
+    margin: 12px 0px 0px 80.1%;
+}
+#questions
+{
+    margin: 12px 0px 0px 10px;
+}
+#exit-party
+{
+    width: 102px;
+    left: 42%;
+}
+#next-question
+{
+    left: 81%;
+}
+#recap-titre {
+    margin: 16px 0px 0px -4px;
+}
+.ic-success {
+    margin-left: 209px;
 }

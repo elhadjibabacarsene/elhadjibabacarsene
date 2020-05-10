@@ -1,4 +1,4 @@
-/**** SaQuizz Version 0.3.6 ****/
+/**** SaQuizz Version 1.0.0 ****/
 
 
 /* INFORMATION DE CONNEXION */
@@ -13,12 +13,8 @@ Password: joueur
 ---------------------------
 
 
-
-Nouvelles fonctionnalités:
-
-- Gestion dynamique de nombre de questions par jeux (admin)
  
-
+VERSION FINALE
 
 
 

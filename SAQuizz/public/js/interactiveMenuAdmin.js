@@ -28,11 +28,11 @@ for( let lien of liens){
            var type = divParent.getAttribute("categorie");
            if(type === "list"){
                var imgItem = divParent.querySelector("img");
-               imgItem.src="public/source/images/icônes/ic-liste-active.png";
+               imgItem.src="public/source/images/icones/ic-liste-active.png";
            }
            if(type === "create"){
                var imgItem = divParent.querySelector("img");
-               imgItem.src="public/source/images/icônes/ic-ajout-active.png";
+               imgItem.src="public/source/images/icones/ic-ajout-active.png";
            }
        }
        lien.addEventListener("click",function(e){
@@ -45,15 +45,15 @@ for( let lien of liens){
                var divItem = lien.parentNode.parentNode.querySelector('div');
                divItem.style.backgroundColor = "white";
 
-               //Initialisation des icônes
+               //Initialisation des icones
                var type = lien.parentNode.parentNode.getAttribute("categorie");
                if(type === "list"){
                    var imgItem = lien.parentNode.parentNode.querySelector("img");
-                   imgItem.src="public/source/images/icônes/ic-liste.png";
+                   imgItem.src="public/source/images/icones/ic-liste.png";
                }
                if(type === "create"){
                    var imgItem = lien.parentNode.parentNode.querySelector("img");
-                   imgItem.src="public/source/images/icônes/ic-ajout.png";
+                   imgItem.src="public/source/images/icones/ic-ajout.png";
                }
            }
            lien.parentNode.parentNode.querySelector("div").style.backgroundColor = "green";
@@ -78,11 +78,11 @@ for( let lien of liens){
            var type = lien.parentNode.parentNode.getAttribute("categorie");
            if(type === "list"){
                var imgItem =lien.parentNode.parentNode.querySelector("img");
-               imgItem.src="public/source/images/icônes/ic-liste-active.png";
+               imgItem.src="public/source/images/icones/ic-liste-active.png";
            }
            if(type === "create"){
                var imgItem = lien.parentNode.parentNode.querySelector("img");
-               imgItem.src="public/source/images/icônes/ic-ajout-active.png";
+               imgItem.src="public/source/images/icones/ic-ajout-active.png";
            }
         });
 

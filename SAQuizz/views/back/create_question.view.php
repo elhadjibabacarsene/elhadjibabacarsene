@@ -4,12 +4,14 @@ ob_start();
 
 ?>
     <!-- ID DE LA PAGE -->
+
     <div id="create-question"></div>
 
     <div id="container-accueil">
+
         <!-- EN TETE -->
         <div class="container-accueil-head">
-            <div class="head-left">
+            <div class="head-left" id="head-left-hidden"">
                 <img src="<?=URL.$_SESSION['avatar']?>" alt="<?=$_SESSION['avatar']?>">
                 <p><?=$_SESSION['prenom']. ' '.$_SESSION['nom']?></p>
             </div>
@@ -74,7 +76,7 @@ ob_start();
                                 <option value="choixSimple">Choix Simple</option>
                                 <option value="choixMultiple">choix Multiple</option>
                             </select>
-                            <img src="public/source/images/icônes/ic-ajout-réponse.png" id="ic-ajout-rep">
+                            <img src="<?=URL?>public/source/images/icones/ic-ajout-reponse.png" id="ic-ajout-rep">
                         </div>
 
                         <!-- TYPE REPONSE -->

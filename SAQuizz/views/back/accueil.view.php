@@ -5,9 +5,10 @@ ob_start();
 ?>
 
     <div id="container-accueil">
+
         <!-- EN TETE -->
         <div class="container-accueil-head">
-            <div class="head-left">
+            <div class="head-left" id="head-left">
                 <img src="<?=URL.$_SESSION['avatar']?>" alt="<?=$_SESSION['avatar']?>">
                 <p><?=$_SESSION['prenom']. ' '.$_SESSION['nom']?></p>
             </div>
@@ -49,6 +50,7 @@ ob_start();
 
                 <!-- ACCUEIL-LIST-QUESTION-->
                 <div class="accueil-list-question">
+
                         <?php
 
                         if($page<=$nbreDePage)
@@ -73,37 +75,39 @@ ob_start();
                                         case "texte":
                                             //On affiche la question
                                             echo '<span class="question-line">' .$i.'. '.$questions_table['question'.$i]['question']. '</span><br>';
-                                            echo '<input class="reponse" disabled="disabled" type="text" value="'.$questions_table['question'.$i]['reponses'].'"><br>';
+                                            echo '<input class="reponse" disabled="disabled" type="text" value="'.$questions_table['question'.$i]['reponses']['reponse1'].'"><br>';
                                         break;
 
                                         case "choixSimple":
                                             echo '<span class="question-line">' .$i.'. '.$questions_table['question'.$i]['question']. '<br></span>';
                                                 //On affiche les bonnes réponses
-                                                 echo '<input type="radio" disabled="disabled" checked>';
-                                                 echo'<label class="lbl-reponse">'.$questions_table['question'.$i]['reponses']['bonnes_reponses'][0].'</label><br>';
-                                                 //On affiche les mauvaise réponses
-                                                 foreach ($questions_table['question'.$i]['reponses']['mauvaises_reponses'] as $key=>$value)
-                                                 {
-                                                     echo '<input type="radio" disabled="disabled">';
-                                                     echo'<label class="lbl-reponse">'.$value.'</label><br>';
-                                                 }
-
+                                                foreach($questions_table['question'.$i]['reponses'] as $key=>$value)
+                                                {
+                                                    if($value['statut'] === true)
+                                                    {
+                                                        echo '<input type="radio" disabled="disabled" checked>';
+                                                        echo'<label class="lbl-reponse">'.$value['libelle'].'</label><br>';
+                                                    }else{
+                                                        echo '<input type="radio" disabled="disabled">';
+                                                        echo'<label class="lbl-reponse">'.$value['libelle'].'</label><br>';
+                                                    }
+                                                }
                                             break;
 
                                         case "choixMultiple":
                                             echo '<span class="question-line">' .$i.'. '.$questions_table['question'.$i]['question']. '<br></span>';
-                                                //On affiche les bonnes réponses
-                                            foreach ($questions_table['question'.$i]['reponses']['bonnes_reponses'] as $key=>$value)
+                                            //On affiche les bonnes réponses
+                                            foreach($questions_table['question'.$i]['reponses'] as $key=>$value)
                                             {
-                                                echo '<input type="checkbox" disabled="disabled" checked>';
-                                                echo'<label class="lbl-reponse">'.$value.'</label><br>';
-                                            }
-                                                //On affiche les mauvaise réponses
-                                                foreach ($questions_table['question'.$i]['reponses']['mauvaises_reponses'] as $key=>$value)
+                                                if($value['statut'] === true)
                                                 {
+                                                    echo '<input type="checkbox" disabled="disabled" checked>';
+                                                    echo'<label class="lbl-reponse">'.$value['libelle'].'</label><br>';
+                                                }else{
                                                     echo '<input type="checkbox" disabled="disabled">';
-                                                    echo'<label class="lbl-reponse">'.$value.'</label><br>';
+                                                    echo'<label class="lbl-reponse">'.$value['libelle'].'</label><br>';
                                                 }
+                                            }
                                             break;
                                     }
 

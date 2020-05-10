@@ -33,3 +33,22 @@ function is_int(value)
 
     return $st;
 }
+
+/**
+ * Fonction qui nous permet de rendre visible l'avatar si c'est le user est un joueur
+ */
+function avatarVisible()
+{
+    //On récupère div
+    let head_left = document.getElementsByClassName("head-left");
+    let img = head_left[0].getElementsByTagName("img");
+    let p = head_left[0].getElementsByTagName("p");
+
+    let div = document.getElementById("joueur-id");
+    if(div)
+    {
+        img[0].style.visibility = "visible";
+        p[0].style.visibility = "visible";
+    }
+}
+avatarVisible();

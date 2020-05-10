@@ -78,7 +78,7 @@ body{
     box-sizing: border-box;
 
 }
-.form-login-form input[type=text],input[type=password]{
+.form-login-form input[type=text]{
     padding-left: 10px;
     font-weight: bold;
     color: #858383;
@@ -159,7 +159,7 @@ body{
     margin-right: 20px;
 }
 .head-right form input[type="submit"]{
-    width: 80px;
+    width: 82px;
     font-size: 12px;
     margin-left: 5px;
     height: 30px;
@@ -243,4 +243,101 @@ body{
 .td-simple
 {
     font-size: 12px;
+}
+#dashboard-top-left img, #dashboard-top-right img {
+    width: 31px;
+    position: absolute;
+    left: 16px;
+    top: -10px;
+}
+#dashboard-top-left p,#dashboard-top-right p {
+    top: 39px;
+    left: 7%;
+}
+.container-accueil-corps-menu {
+    height: 453px;
+    margin: -6px 0px 0px 10px;
+}
+.accueil-nbre-question label
+{
+    font-size: 10px;
+    margin-left: -10px;
+}
+.accueil-nbre-question form
+{
+    margin: -4px 0px 0px -7px;
+}
+.accueil-nbre-question form input[type="text"] {
+    border: 1px solid #8d8170;
+    margin-left: -2px;
+}
+.accueil-nbre-question form input[type="submit"] {
+    height: 20px;
+}
+#form-create-user input[type="text"],input[type="password"]
+{
+    border: 1px solid #8d8170;
+}
+
+#color-overlay
+{
+    height: 106%;
+}
+.avatar-create-user-img {
+    top: 206px;
+    left: 203px;
+}
+
+#div-score {
+    width: 279%;
+}
+#div-top-score, #div-best-score {
+    width: 100%;
+}
+#div-best-score{
+    left: 126px;
+    width: 133%;
+
+}
+#recap-titre {
+    margin: 141px 0px 0px 11px;
+}
+.rep-quest-text {
+    width: 160px;
+    margin: 79px 0px 0px -70px;
+}
+#points {
+    width: 28%;
+    margin: 12px 0px 0px 40%;
+    padding: 6px 0px 0px 10px;
+}
+#exit-party {
+    top: 90%;
+    left: 27%;
+    width: 99px;
+}
+#before-question {
+    top: 80%;
+    left: 7px;
+}
+#next-question {
+    top: 80%;
+    left: 65%;
+}
+#questions {
+    margin: 12px 0px 0px 6px;
+}
+#remake-question {
+    left: 74%;
+    width: 78px;
+}
+#recap-score {
+    margin: 20px 0px 0px 16px;
+    text-align: center;
+}
+#recap-titre {
+    margin: 16px 0px 0px -4px;
+}
+.ic-success {
+    margin-left: 86px;
 }

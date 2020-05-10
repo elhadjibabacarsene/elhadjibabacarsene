@@ -3,6 +3,7 @@
 ob_start();
 
 ?>
+
     <div id="liste-joueurs"></div>
     <div id="container-accueil">
 
@@ -69,7 +70,7 @@ ob_start();
                                               echo '<tr>';
                                               echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['nom'] . '</td>';
                                               echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['prenom'] . '</td>';
-                                              echo '<td class="td-simple">' . $json_user_file_decode['user' .  $id]['score'] . '<span id="pts"> pts</span></td>';
+                                              echo '<td class="td-simple td-score">' . $json_user_file_decode['user' .  $id]['score'] . '<span id="pts"> pts</span></td>';
                                               echo '</tr>';
                                           }
 

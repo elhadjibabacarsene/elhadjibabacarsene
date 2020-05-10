@@ -11,10 +11,10 @@ ob_start();
     </div>
     <div class="form-login-form">
         <form action="<?=$_SERVER['PHP_SELF']?>" method="POST" id="form-login">
-                <img class="icone-login" src="<?=URL?>public/source/images/icônes/ic-login.png" alt="">
+                <img class="icone-login" src="<?=URL?>public/source/images/icones/ic-login.png" alt="">
                     <input type="text" name="login" error="error-1" id="login" placeholder="Login" value="<?=(isset($_POST['login'])) ? $login : ""?>">
                     <p class="comment" id="error-1"><?=$loginError?></p>
-                <img class="icone-password" src="<?=URL?>public/source/images/icônes/icone-password.png" alt="">
+                <img class="icone-password" src="<?=URL?>public/source/images/icones/icone-password.png" alt="">
                     <input type="password" name="password" error="error-2" id="password" placeholder="Password" value="<?=(isset($_POST['password'])) ? $password : ""?>"">
                     <p class="comment" id="error-2"><?=$passwordError?></p>
                     <input type="submit" value="Connexion" name="se-connecter" id="se-connecter">

@@ -529,7 +529,7 @@ body{
 /** TABLE LISTE JOUEURS **/
 #list-joueurs
 {
-    margin-left: 10%;
+    margin-left: 2%;
     color: #8d8170;
     white-space: nowrap;
 }

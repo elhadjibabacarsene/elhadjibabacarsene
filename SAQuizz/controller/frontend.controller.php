@@ -116,6 +116,7 @@ function getPageJeux(){
             unset( $_SESSION['isRecap']);
             unset($_SESSION['isNoDispo']);
             unset($_SESSION['quitterPartie']);
+            $confi = false;
 
             //On récupère la table user
             $table_user = transformFileJson("utilisateur.json");

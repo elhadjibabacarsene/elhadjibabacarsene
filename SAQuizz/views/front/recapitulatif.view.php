@@ -28,6 +28,7 @@ ob_start();
                 <?php
                     if($score_party>$last_score)
                     {
+                        $confi = true;
                         echo '<div id="recap-titre" style="color: green">Quelle performence ! Félicitation pour votre nouveau record</div>';
                         echo '<br>';
                         echo '<img class="ic-success" src="'.URL.'public/source/images/icones/in-love.png">';
@@ -46,7 +47,7 @@ ob_start();
                         //Si le score de la partie est égal au score record
                     }elseif($score_party===$last_score)
                     {
-                        echo '<div id="recap-titre">Waw ! Vous êtiez à un peu de battre votre record</div>';
+                        echo '<div id="recap-titre">Waw ! Vous êtiez à un pas de battre votre record</div>';
                         echo '<br>';
                         echo '<img class="ic-success" src="'.URL.'public/source/images/icones/smile.png">';
                     }
@@ -60,14 +61,7 @@ ob_start();
 
                         foreach ($_SESSION['table_num_questions'] as $key=>$question)
                         {
-                           /* echo '<span class="question-line">' .($key+1).'. '.$questions_table['question'.$question]['question']. '</span>';
 
-                                if(in_array($question,$_SESSION['id_question_true']))
-                                {
-                                    echo'<img src="'.URL.'public/source/images/icones/validate.png" class="ic-validate"><br>';
-                                }else{
-                                    echo'<img src="'.URL.'public/source/images/icones/unvalidate.png"  class="ic-validate"><br>';
-                                }*/
                             switch ($questions_table['question'.$question]['type_reponse'])
                             {
                                 //Si la question est de type texte
@@ -213,4 +207,12 @@ ob_start();
 <?php
 $content=ob_get_clean();
 require_once 'views/commons/template.php';
+
+    if($confi===true)
+    {
+        echo '<script>confetti.start()</script>';
+    }
+
 ?>
+
+

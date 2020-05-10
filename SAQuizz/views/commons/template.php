@@ -37,6 +37,7 @@
 
 
     <!-- INCLUSION DES FICHIERS JS -->
+    <script src="https://cdn.jsdelivr.net/gh/mathusummut/confetti.js/confetti.min.js"></script>
     <script text="type/javascript" src="<?URL?>public/js/create_question.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/nbre_reponse.js<?php echo "?".rand();?>"></script>
     <script text="type/javascript" src="<?URL?>public/js/menu_interactif.js<?php echo "?".rand();?>"></script>

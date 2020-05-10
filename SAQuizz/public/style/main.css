@@ -178,7 +178,7 @@ body{
     height: 60px;
     border:solid 1px white;
     border-radius: 50%;
-    margin-top: 10px;
+    margin-top: 14px;
     margin-left: 70px;
     visibility: hidden;
 }
@@ -187,7 +187,7 @@ body{
     color: white;
     text-align: center;
     padding-left: 70px;
-    margin-top: 2px;
+    margin-top: -5px;
     visibility: hidden;
 }
 .head-right{

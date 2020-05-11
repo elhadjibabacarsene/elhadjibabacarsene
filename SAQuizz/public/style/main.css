@@ -493,7 +493,7 @@ body{
     border: 3px solid #52bfd1;
     position: absolute;
     top: 64px;
-    left: 505px;
+    left: 440px;
     width:24%;
     height: 34%;
     border-radius: 50%;
@@ -501,7 +501,7 @@ body{
 .lbl-avatar-admin{
     position: absolute;
     top: 290px;
-    left: 560px;
+    left: 490px;
     font-size: 12px;
     color: black;
 }
@@ -1150,5 +1150,16 @@ body{
 {
     width: 40px;
     margin-left: 400px;
+}
+
+.contain-user
+{
+    top: 90px;
+    height:0px;
+}
+.contain-inscription {
+    position: absolute;
+    left: 80px;
+    width: 1000px;
 }
 

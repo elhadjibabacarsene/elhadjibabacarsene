@@ -146,7 +146,7 @@ body{
 
 #form-create-user input[type="text"],input[type="password"]{
     display: block;
-    width: 300px;
+    width: 161px;
     height: 30px;
     font-size: 14px;
     color: #575156;
@@ -236,6 +236,12 @@ body{
 #recap-titre {
     margin: 16px 0px 0px -4px;
 }
-.ic-success {
-    margin-left: 209px;
+.contain-inscription
+{
+    position: absolute;
+    left: -100px;
+}
+.avatar-create-user-img {
+    top: 154px;
+    left: 327px;
 }

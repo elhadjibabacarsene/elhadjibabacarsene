@@ -341,3 +341,12 @@ body{
 .ic-success {
     margin-left: 86px;
 }
+.contain-inscription
+{
+    position: absolute;
+    left: -205px;
+}
+.avatar-create-user-img {
+    top: 170px;
+    left: 203px;
+}

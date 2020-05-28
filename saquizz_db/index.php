@@ -1,5 +1,4 @@
 <?php 
-
 require_once 'config/config.php';
 require_once 'controllers/frontend.controllers.php';
 require_once 'controllers/backend.controllers.php';

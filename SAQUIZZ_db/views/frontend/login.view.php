@@ -1,49 +1,75 @@
-<?php ob_start(); ?>
 
-<div class="container-fluid cadre-general">
-          <div class="row">
-                <div class="col bg-blue-ciel height-window-100vh widht-50-percent">
-                </div>
-                <div class="col height-window-100vh widht-50-percent">
-                </div>
-          </div> 
-          <div class="row cadre-form rounded-lg position-absolute">
-                <div class="cadre-left position-relative">   
-                    <img src="<?=URL?>/public/source/images/bg-login3.png" alt="" id="bg-login" class="position-absolute">
-                    <p class="titre-cadre police-general font-weight-bold text-white position-absolute">JOUER ET TESTER , <span class="font-weight-normal d-block">VOTRE NIVEAU DE CULTURE GÉNÉRALE</span></p>
-                </div>
-                <div class="cadre-right position-relative">
-                    <div class="lien-authen position-relative font-weight-bold">
-                        <a class="text-decoration-none text-dark" href="#" id="lien-login">Connexion</a>
-                        <a class="text-decoration-none ml-2 text-dark" href="#" id="lien-inscription">S'incrire</a>
-                    </div>
-                    <div class="cadre-logo position-absolute">
-                        <img src="<?=URL?>/public/source/images/logo-quizzsa.png" alt="">
-                    </div>
-                    <div id="form" class="position-absolute">
-                        <form>
-                            <div class="form-group">
-                                <div class="input-div">
-                                    <input type="text" class="form-control input-text-login rounded-0 text-secondary" id="login" placeholder="Email ou login">
-                                    <img src="<?=URL?>/public/source/images/icones/icone-login.png" alt="" class="ic-login-password position-absolute" id="ic-login">
-                                    <p class="error text-danger">message erreur</p>
-                                </div>
-                                <div class="input-div">
-                                    <input type="text" class="form-control input-text-login rounded-0 text-secondary" id="password" placeholder="Password">
-                                    <img src="<?=URL?>/public/source/images/icones/icone-password.png" alt="" class="ic-login-password position-absolute" id="ic-password">
-                                    <p class="error text-danger">message erreur</p>
-                                </div>
-                               
-                            </div>
-                            <button type="submit" id="btn-login" class="rounded-lg text-white">Se connecter</button>
-                        </form>
-                    </div>
-                </div>
-          </div> 
-      </div> 
+<div class="cadre-logo position-absolute">
+    <img src="public/source/images/logo-quizzsa.png" alt="">
+</div>
+<div id="form-login-div" class="position-absolute">
+    <form id="form-login" method="POST" action="">
+        <div class="form-group">
+            <div class="input-div">
+                <label for="login_email" class="mb-0 color-blue-ciel">Email ou login</label>
+                <input type="text" class="form-control input-text-login rounded text-secondary" id="loginEmail"
+                    placeholder="Email ou login" name="loginEmail" value="<?=$arrayData['loginEmail']?>">
+                <small id="helpId" class="form-text text-danger comments"
+                    error="loginEmail"><?=$arrayData['loginEmailError']?></small>
+            </div>
+            <div class="input-div">
+                <label for="password" class="mb-0 color-blue-ciel">Mot de pass</label>
+                <input type="password" class="form-control input-text-login rounded text-secondary" id="password"
+                    placeholder="Password" name="password" value="<?=$arrayData['password']?>">
+                <small id="helpId" class="form-text text-danger comments"
+                    error="password"><?=$arrayData['passwordError']?></small>
+            </div>
+
+        </div>
+        <button type="submit" id="btn-login" class="rounded-lg text-white" name="btn_login">Se connecter</button>
+    </form>
+</div>
+
+<script>
 
 
-<?php
-$content=ob_get_clean();
-require_once 'views/common/templates/souscription.template.php';
-?>      
+$(document).ready(function(e){
+    
+
+    $("#form-login").submit(function (e) {
+        e.preventDefault();
+        alert("envoi des données");
+        
+        $('.comments').empty();
+        let postdata = $('#form-login').serialize();
+
+        $.ajax({
+
+            type: "POST",
+            url: "controllers/login.controller.php",
+            dataType: "json",
+            data: postdata
+
+        }).done(function(response){
+            if(response.isSuccess){
+                alert("success");
+                console.log(response);
+                if(response.isGood){
+                    alert("good");
+                }
+                if(response.redirection !== ""){
+                    location.replace(response.redirection);    
+                }
+            }else{
+                $('#loginEmail + .comments').html(response.loginEmailError);
+                $('#password + .comments').html(response.passwordError);
+            }
+        })
+        .fail(function(xhr,status,error){
+            //console.log(xhr);
+        })
+        
+    });
+})
+
+
+
+</script>
+
+
+
